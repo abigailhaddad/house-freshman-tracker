@@ -1,0 +1,44 @@
+# 120th House Freshman Tracker
+
+New members-elect of the U.S. House for the 120th Congress (2027–29): prior legislative service, committee assignments, leadership roles, and predicted caucus memberships.
+
+Live page: https://sorendayton.github.io/house-freshman-tracker/
+
+Maintained by Soren Dayton, Director of American Governance Policy, Foundation for American Innovation (soren@thefai.org). This is an evolving work product built from open-source research (Ballotpedia, Wikipedia, press reports, caucus-PAC endorsement lists). Nothing has been validated against primary records; caucus memberships are predictions. Use it as a starting point, not a citation.
+
+## Files
+
+| File | What it is |
+|---|---|
+| `index.html` | The page. Loads `data.js` at runtime; no build step. |
+| `data.js` | The dataset as a JavaScript array (`window.FRESHMEN`). This is what the page reads. |
+| `data.json` | The same dataset as JSON, with a `meta` block (status date, row count). For spreadsheets and scripts. |
+
+`data.js` and `data.json` are generated from the same source and are always in sync. To update, replace both and `index.html` if the page changed.
+
+## Fields (one record per member-elect or uncalled contender)
+
+| Field | Meaning |
+|---|---|
+| `d` | District, e.g. `TX-32`, `WY-AL`, `DC-AL` |
+| `n` | Name |
+| `p` | Party, `D` or `R` |
+| `st` | Race status: `Called`, `Called (D-on-D)`, `Called (delegate)`, `Uncalled — leads`, `Uncalled — trails`, `Runoff Dec 12` |
+| `seat` | How the seat opened (retirement, other office, defeated incumbent, primary loss, new seat, vacancy) |
+| `pred` | Predecessor |
+| `leg` | Prior legislative service (state, territorial, tribal, or U.S. House), or empty |
+| `lt` | Leadership tier in that legislature: `1` chamber or caucus leadership, `2` committee chair or ranking member, `3` vice chair or subcommittee chair; absent if none |
+| `lead` | Description of the leadership role |
+| `comm` | Committee assignments, most recent session first (Ballotpedia) |
+| `other` | Other offices and career |
+| `cau` | Predicted ideological caucuses: array of `{c: caucus, lvl: H/M/L, why: basis}` |
+| `ident` | Likely identity or affinity caucuses (inferred from reported background) |
+| `note` | Caveats, race margins, recount status |
+
+Confidence levels: `H` endorsement by the caucus's own PAC, prior membership, or self-identification; `M` inference from record, district, or allied-group endorsement; `L` guess.
+
+Returning former members (Carl, Solis, Bean, Allred, Luria, McAdams) are included and flagged in `seat`. Contenders are removed once their race is called against them.
+
+## Sources
+
+Election results: Wikipedia's 2026 House elections results tables; Ballotpedia; AP and local reporting for recounts. Bios and committees: Ballotpedia and Wikipedia. Caucus signals: NewDem Action Fund, Blue Dog PAC, Freedom Caucus Fund, Republican Main Street PAC, Congressional Progressive Caucus PAC, Justice Democrats; FEC filings for the Republican Governance Group PAC. Full source list is in the page's method note.
