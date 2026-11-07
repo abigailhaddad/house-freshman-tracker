@@ -4,7 +4,17 @@ New members-elect of the U.S. House for the 120th Congress (2027–29): prior le
 
 Live page: https://sorendayton.github.io/house-freshman-tracker/
 
-Maintained by Soren Dayton, Director of American Governance Policy, Foundation for American Innovation (soren@thefai.org). This is an evolving work product built from open-source research (Ballotpedia, Wikipedia, press reports, caucus-PAC endorsement lists). Nothing has been validated against primary records; caucus memberships are predictions. Use it as a starting point, not a citation.
+## Maintainer and contact
+
+Soren Dayton, Director of American Governance Policy, Foundation for American Innovation
+Email: soren@thefai.org
+Substack: Prototyping Politics
+
+Corrections, additions, and sources are welcome by email or as a GitHub issue on this repository.
+
+## Disclaimer
+
+This is an evolving work product built from open-source research (Ballotpedia, Wikipedia, press reports, caucus-PAC endorsement lists). Nothing has been validated against primary records; caucus memberships are predictions. Use it as a starting point, not a citation.
 
 ## Files
 
