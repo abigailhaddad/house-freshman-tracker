@@ -11,7 +11,7 @@
  "changelog": [
   {
    "d": "2026-11-07",
-   "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. Margins refreshed for all twelve uncalled rows from state election boards and local reporting: recounts pending or requested in MN-1, FL-27 and SC-2; NC-3, NC-5 and NC-7 inside recount range ahead of the 11/13 canvass; FL-7 a hair outside; CA-4, CO-4, AZ-2 and WA-5 still counting. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv."
+   "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. Margins refreshed for all twelve uncalled rows from state election boards and local reporting, and each uncalled or runoff row now links to the official state results page: recounts pending or requested in MN-1, FL-27 and SC-2; NC-3, NC-5 and NC-7 inside recount range ahead of the 11/13 canvass; FL-7 a hair outside; CA-4, CO-4, AZ-2 and WA-5 still counting. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv. Every row now links to its Ballotpedia race page. Member links are now taken from each race's own candidate listing instead of being built from the name; that fixed 51 of 242 links that were broken: 22 on Ballotpedia (13 disambiguation pages, 9 missing) and 29 on Wikipedia (10 pointed at a different person of the same name, 15 at disambiguation pages, 4 at nothing useful). Six members have no Wikipedia article, so that link is omitted for them."
   },
   {
    "d": "2026-11-06",
@@ -25,6 +25,9 @@
  "members": [
   {
    "d": "AL-1",
+   "race": "Alabama's_1st_Congressional_District_election,_2026",
+   "bp": "Jerry_Carl",
+   "wp": "Jerry_Carl",
    "n": "Jerry Carl",
    "p": "R",
    "st": "Called",
@@ -50,6 +53,9 @@
   },
   {
    "d": "AZ-1",
+   "race": "Arizona's_1st_Congressional_District_election,_2026",
+   "bp": "Amish_Shah",
+   "wp": "Amish_Shah",
    "n": "Amish Shah",
    "p": "D",
    "st": "Called",
@@ -72,6 +78,13 @@
   },
   {
    "d": "AZ-2",
+   "race": "Arizona's_2nd_Congressional_District_election,_2026",
+   "bp": "Jonathan_Nez",
+   "wp": "Jonathan_Nez",
+   "res": {
+    "label": "Arizona Secretary of State",
+    "url": "https://app.enhancedvoting.com/results/public/Arizona/elections/110326GeneralElection"
+   },
    "n": "Jonathan Nez",
    "p": "D",
    "st": "Uncalled — trails",
@@ -90,10 +103,13 @@
    "ident": [
     "Congressional Native American Caucus"
    ],
-   "note": "Trails Crane 48.5–49.7 (155,585–159,466, −3,881) with Arizona still counting late early ballots; AP has not called it (azfamily, 11/06; Ballotpedia, 11/07). Likely loss."
+   "note": "Trails Crane 48.47–49.65 (158,856–162,741, −3,885) per the Arizona Secretary of State, 11/07; late early ballots still being tabulated. AP has not called it. Likely loss."
   },
   {
    "d": "AZ-5",
+   "race": "Arizona's_5th_Congressional_District_election,_2026",
+   "bp": "Mark_Lamb",
+   "wp": "Mark_Lamb_(sheriff)",
    "n": "Mark Lamb",
    "p": "R",
    "st": "Called",
@@ -121,6 +137,9 @@
   },
   {
    "d": "AZ-6",
+   "race": "Arizona's_6th_Congressional_District_election,_2026",
+   "bp": "JoAnna_Mendoza",
+   "wp": "JoAnna_Mendoza",
    "n": "JoAnna Mendoza",
    "p": "D",
    "st": "Called",
@@ -144,6 +163,9 @@
   },
   {
    "d": "CA-1",
+   "race": "California's_1st_Congressional_District_election,_2026",
+   "bp": "Mike_McGuire",
+   "wp": "Mike_McGuire_(politician)",
    "n": "Mike McGuire",
    "lt": 1,
    "lead": "Senate President pro Tempore 2024–25; Majority Leader 2022–24; chaired Rules, Governance & Finance, Fisheries",
@@ -171,6 +193,13 @@
   },
   {
    "d": "CA-4",
+   "race": "California's_4th_Congressional_District_election,_2026",
+   "bp": "Eric_Jones_(California)",
+   "wp": null,
+   "res": {
+    "label": "California Secretary of State",
+    "url": "https://electionresults.sos.ca.gov/returns/us-rep/district/4"
+   },
    "n": "Eric Jones",
    "p": "D",
    "st": "Uncalled — leads",
@@ -191,6 +220,9 @@
   },
   {
    "d": "CA-6",
+   "race": "California's_6th_Congressional_District_election,_2026",
+   "bp": "Richard_Pan",
+   "wp": "Richard_Pan",
    "n": "Richard Pan",
    "lt": 2,
    "lead": "Chair, Senate Health Committee 2019–22",
@@ -215,6 +247,9 @@
   },
   {
    "d": "CA-11",
+   "race": "California's_11th_Congressional_District_election,_2026",
+   "bp": "Scott_Wiener",
+   "wp": "Scott_Wiener",
    "n": "Scott Wiener",
    "lt": 1,
    "lead": "Assistant Majority Whip; chair, Budget & Fiscal Review and Joint Legislative Budget; chair, Housing 2019–24; chair, Legislative LGBTQ Caucus",
@@ -244,6 +279,9 @@
   },
   {
    "d": "CA-22",
+   "race": "California's_22nd_Congressional_District_election,_2026",
+   "bp": "Randy_Villegas_(California)",
+   "wp": "Randy_Villegas",
    "n": "Randy Villegas",
    "p": "D",
    "st": "Called",
@@ -266,6 +304,9 @@
   },
   {
    "d": "CA-26",
+   "race": "California's_26th_Congressional_District_election,_2026",
+   "bp": "Jacqui_Irwin",
+   "wp": "Jacqui_Irwin",
    "n": "Jacqui Irwin",
    "lt": 2,
    "lead": "Chair, Climate Change Policies (2025–26); chair, Revenue & Taxation (2023–24); chair, Military & Veterans Affairs (2019–22)",
@@ -288,6 +329,9 @@
   },
   {
    "d": "CA-34",
+   "race": "California's_34th_Congressional_District_election,_2026",
+   "bp": "Angela_Gonzales-Torres",
+   "wp": "Angela_Gonzales-Torres",
    "n": "Angela Gonzales-Torres",
    "p": "D",
    "st": "Called (D-on-D)",
@@ -310,6 +354,9 @@
   },
   {
    "d": "CA-38",
+   "race": "California's_38th_Congressional_District_election,_2026",
+   "bp": "Hilda_Solis",
+   "wp": "Hilda_Solis",
    "n": "Hilda Solis",
    "lt": 2,
    "lead": "Chair, Senate labor committee (1990s); in U.S. House: freshman class whip (2001), vice chair, Democratic Steering & Policy; CHC 2nd vice chair",
@@ -334,6 +381,9 @@
   },
   {
    "d": "CA-48",
+   "race": "California's_48th_Congressional_District_election,_2026",
+   "bp": "Marni_von_Wilpert",
+   "wp": "Marni_von_Wilpert",
    "n": "Marni von Wilpert",
    "p": "D",
    "st": "Called",
@@ -354,6 +404,9 @@
   },
   {
    "d": "CO-1",
+   "race": "Colorado's_1st_Congressional_District_election,_2026",
+   "bp": "Melat_Kiros",
+   "wp": "Melat_Kiros",
    "n": "Melat Kiros",
    "p": "D",
    "st": "Called",
@@ -376,6 +429,13 @@
   },
   {
    "d": "CO-4",
+   "race": "Colorado's_4th_Congressional_District_election,_2026",
+   "bp": "Eileen_Laubacher",
+   "wp": "Eileen_Laubacher",
+   "res": {
+    "label": "Colorado Secretary of State",
+    "url": "https://results.enr.clarityelections.com/CO/127407/"
+   },
    "n": "Eileen Laubacher",
    "p": "D",
    "st": "Uncalled — leads",
@@ -399,10 +459,13 @@
    "ident": [
     "Veterans caucuses"
    ],
-   "note": "Leads Boebert by 3,069 votes (under 1 pt) per the Colorado Secretary of State's 11/05 evening update (Gazette, 11/06); military, overseas and cured ballots still arriving. The Boebert campaign is alleging 'unusual voting patterns' (Denver Gazette, 11/06). Not called."
+   "note": "Leads Boebert 48.76–47.93 (185,818–182,646, +3,172) per the Colorado Secretary of State, 11/07; post-election reporting (cures, military and overseas ballots) in progress in all 21 counties. The Boebert campaign is alleging 'unusual voting patterns' (Denver Gazette, 11/06). Not called."
   },
   {
    "d": "CO-5",
+   "race": "Colorado's_5th_Congressional_District_election,_2026",
+   "bp": "Jessica_Killin",
+   "wp": "Jessica_Killin",
    "n": "Jessica Killin",
    "p": "D",
    "st": "Called",
@@ -425,6 +488,9 @@
   },
   {
    "d": "CO-8",
+   "race": "Colorado's_8th_Congressional_District_election,_2026",
+   "bp": "Manny_Rutinel",
+   "wp": "Manny_Rutinel",
    "n": "Manny Rutinel",
    "p": "D",
    "st": "Called",
@@ -447,6 +513,9 @@
   },
   {
    "d": "CT-1",
+   "race": "Connecticut's_1st_Congressional_District_election,_2026",
+   "bp": "Luke_Bronin",
+   "wp": "Luke_Bronin",
    "n": "Luke Bronin",
    "p": "D",
    "st": "Called",
@@ -467,6 +536,9 @@
   },
   {
    "d": "FL-2",
+   "race": "Florida's_2nd_Congressional_District_election,_2026",
+   "bp": "Austin_Rogers",
+   "wp": "Austin_Rogers_(politician)",
    "n": "Austin Rogers",
    "p": "R",
    "st": "Called",
@@ -487,6 +559,13 @@
   },
   {
    "d": "FL-7",
+   "race": "Florida's_7th_Congressional_District_election,_2026",
+   "bp": "Ryan_Elijah",
+   "wp": null,
+   "res": {
+    "label": "Florida Division of Elections",
+    "url": "https://floridaelectionwatch.gov/FederalOffices/USRepresentative"
+   },
    "n": "Ryan Elijah",
    "p": "R",
    "st": "Uncalled — leads",
@@ -517,6 +596,9 @@
   },
   {
    "d": "FL-11",
+   "race": "Florida's_11th_Congressional_District_election,_2026",
+   "bp": "Joe_Strada",
+   "wp": "Joe_Strada",
    "n": "Joe Strada",
    "p": "R",
    "st": "Called",
@@ -537,6 +619,9 @@
   },
   {
    "d": "FL-16",
+   "race": "Florida's_16th_Congressional_District_election,_2026",
+   "bp": "Sydney_Gruters",
+   "wp": "Sydney_Gruters",
    "n": "Sydney Gruters",
    "p": "R",
    "st": "Called",
@@ -557,6 +642,9 @@
   },
   {
    "d": "FL-19",
+   "race": "Florida's_19th_Congressional_District_election,_2026",
+   "bp": "Jim_Schwartzel",
+   "wp": "Jim_Schwartzel",
    "n": "Jim Schwartzel",
    "p": "R",
    "st": "Called",
@@ -582,6 +670,9 @@
   },
   {
    "d": "FL-22",
+   "race": "Florida's_22nd_Congressional_District_election,_2026",
+   "bp": "Pia_Dandiya",
+   "wp": "Pia_Dandiya",
    "n": "Pia Dandiya",
    "p": "D",
    "st": "Called",
@@ -604,6 +695,9 @@
   },
   {
    "d": "FL-24",
+   "race": "Florida's_24th_Congressional_District_election,_2026",
+   "bp": "Oliver_Gilbert",
+   "wp": "Oliver_Gilbert",
    "n": "Oliver Gilbert",
    "p": "D",
    "st": "Called",
@@ -631,6 +725,13 @@
   },
   {
    "d": "FL-27",
+   "race": "Florida's_27th_Congressional_District_election,_2026",
+   "bp": "Eliott_Rodriguez",
+   "wp": "Eliott_Rodriguez",
+   "res": {
+    "label": "Florida Division of Elections",
+    "url": "https://floridaelectionwatch.gov/FederalOffices/USRepresentative"
+   },
    "n": "Eliott Rodriguez",
    "p": "D",
    "st": "Uncalled — trails",
@@ -653,6 +754,9 @@
   },
   {
    "d": "GA-1",
+   "race": "Georgia's_1st_Congressional_District_election,_2026",
+   "bp": "James_Kingston_(Georgia)",
+   "wp": "Jim_Kingston_(politician)",
    "n": "Jim Kingston",
    "p": "R",
    "st": "Called",
@@ -678,6 +782,9 @@
   },
   {
    "d": "GA-10",
+   "race": "Georgia's_10th_Congressional_District_election,_2026",
+   "bp": "Houston_Gaines",
+   "wp": "Houston_Gaines",
    "n": "Houston Gaines",
    "lt": 3,
    "lead": "Vice chair, House Appropriations (2025–26); secretary, Health (2021–22)",
@@ -710,6 +817,9 @@
   },
   {
    "d": "GA-11",
+   "race": "Georgia's_11th_Congressional_District_election,_2026",
+   "bp": "John_Cowan",
+   "wp": "John_Cowan_(Georgia_politician)",
    "n": "John Cowan",
    "p": "R",
    "st": "Called",
@@ -735,6 +845,9 @@
   },
   {
    "d": "GA-13",
+   "race": "Georgia's_13th_Congressional_District_election,_2026",
+   "bp": "Jasmine_Clark",
+   "wp": "Jasmine_Clark",
    "n": "Jasmine Clark",
    "p": "D",
    "st": "Called",
@@ -762,6 +875,9 @@
   },
   {
    "d": "IL-2",
+   "race": "Illinois'_2nd_Congressional_District_election,_2026",
+   "bp": "Donna_Miller_(Illinois)",
+   "wp": "Donna_Miller",
    "n": "Donna Miller",
    "p": "D",
    "st": "Called",
@@ -784,6 +900,9 @@
   },
   {
    "d": "IL-4",
+   "race": "Illinois'_4th_Congressional_District_election,_2026",
+   "bp": "Patty_Garcia",
+   "wp": "Patty_García",
    "n": "Patty García",
    "p": "D",
    "st": "Called",
@@ -806,6 +925,9 @@
   },
   {
    "d": "IL-7",
+   "race": "Illinois'_7th_Congressional_District_election,_2026",
+   "bp": "La_Shawn_K._Ford",
+   "wp": "La_Shawn_Ford",
    "n": "La Shawn Ford",
    "lt": 2,
    "lead": "Chair, Appropriations–Higher Education 2019–26; vice chair, Restorative Justice & Public Safety",
@@ -835,6 +957,9 @@
   },
   {
    "d": "IL-8",
+   "race": "Illinois'_8th_Congressional_District_election,_2026",
+   "bp": "Melissa_Bean",
+   "wp": "Melissa_Bean",
    "n": "Melissa Bean",
    "p": "D",
    "st": "Called",
@@ -860,6 +985,9 @@
   },
   {
    "d": "IL-9",
+   "race": "Illinois'_9th_Congressional_District_election,_2026",
+   "bp": "Daniel_K._Biss",
+   "wp": "Daniel_Biss",
    "n": "Daniel Biss",
    "p": "D",
    "st": "Called",
@@ -880,6 +1008,9 @@
   },
   {
    "d": "IN-5",
+   "race": "Indiana's_5th_Congressional_District_election,_2026",
+   "bp": "J.D._Ford",
+   "wp": "J._D._Ford",
    "n": "J.D. Ford",
    "lt": 1,
    "lead": "Senate Democratic Caucus Whip 2024–26 (Indiana Senate Democrats); ranking minority member on five committees 2019–22",
@@ -904,6 +1035,9 @@
   },
   {
    "d": "IA-1",
+   "race": "Iowa's_1st_Congressional_District_election,_2026",
+   "bp": "Christina_Bohannan",
+   "wp": "Christina_Bohannan",
    "n": "Christina Bohannan",
    "p": "D",
    "st": "Called",
@@ -924,6 +1058,9 @@
   },
   {
    "d": "IA-2",
+   "race": "Iowa's_2nd_Congressional_District_election,_2026",
+   "bp": "Lindsay_James",
+   "wp": "Lindsay_James_(politician)",
    "n": "Lindsay James",
    "lt": 1,
    "lead": "House Minority Whip; ranking member, Government Oversight (2023–24)",
@@ -946,6 +1083,9 @@
   },
   {
    "d": "IA-3",
+   "race": "Iowa's_3rd_Congressional_District_election,_2026",
+   "bp": "Sarah_Trone_Garriott",
+   "wp": "Sarah_Trone_Garriott",
    "n": "Sarah Trone Garriott",
    "lt": 1,
    "lead": "Former Senate Minority Whip; ranking member, Health & Human Services (2023–24)",
@@ -968,6 +1108,9 @@
   },
   {
    "d": "IA-4",
+   "race": "Iowa's_4th_Congressional_District_election,_2026",
+   "bp": "Chris_McGowan",
+   "wp": "Chris_McGowan",
    "n": "Chris McGowan",
    "p": "R",
    "st": "Called",
@@ -998,6 +1141,9 @@
   },
   {
    "d": "KY-4",
+   "race": "Kentucky's_4th_Congressional_District_election,_2026",
+   "bp": "Ed_Gallrein",
+   "wp": "Ed_Gallrein",
    "n": "Ed Gallrein",
    "p": "R",
    "st": "Called",
@@ -1025,6 +1171,9 @@
   },
   {
    "d": "KY-6",
+   "race": "Kentucky's_6th_Congressional_District_election,_2026",
+   "bp": "Zach_Dembo",
+   "wp": "Zach_Dembo",
    "n": "Zach Dembo",
    "p": "D",
    "st": "Called",
@@ -1045,6 +1194,13 @@
   },
   {
    "d": "LA-5",
+   "race": "Louisiana's_5th_Congressional_District_election,_2026",
+   "bp": "Gabe_Firment",
+   "wp": "Gabe_Firment",
+   "res": {
+    "label": "Louisiana Secretary of State",
+    "url": "https://voterportal.sos.la.gov/graphical"
+   },
    "n": "Gabe Firment",
    "lt": 2,
    "lead": "Chair, House Insurance Committee 2025–26",
@@ -1072,6 +1228,13 @@
   },
   {
    "d": "LA-6",
+   "race": "Louisiana's_6th_Congressional_District_election,_2026",
+   "bp": "Chauna_Banks",
+   "wp": null,
+   "res": {
+    "label": "Louisiana Secretary of State",
+    "url": "https://voterportal.sos.la.gov/graphical"
+   },
    "n": "Chauna Banks",
    "p": "D",
    "st": "Runoff Dec 12",
@@ -1094,6 +1257,9 @@
   },
   {
    "d": "ME-2",
+   "race": "Maine's_2nd_Congressional_District_election,_2026",
+   "bp": "Paul_LePage",
+   "wp": "Paul_LePage",
    "n": "Paul LePage",
    "p": "R",
    "st": "Called",
@@ -1119,6 +1285,9 @@
   },
   {
    "d": "MD-5",
+   "race": "Maryland's_5th_Congressional_District_election,_2026",
+   "bp": "Adrian_Boafo",
+   "wp": "Adrian_Boafo",
    "n": "Adrian Boafo",
    "p": "D",
    "st": "Called",
@@ -1141,6 +1310,9 @@
   },
   {
    "d": "MA-6",
+   "race": "Massachusetts'_6th_Congressional_District_election,_2026",
+   "bp": "Dan_Koh",
+   "wp": "Dan_Koh",
    "n": "Dan Koh",
    "p": "D",
    "st": "Called",
@@ -1163,6 +1335,9 @@
   },
   {
    "d": "MI-4",
+   "race": "Michigan's_4th_Congressional_District_election,_2026",
+   "bp": "Sean_McCann",
+   "wp": "Sean_McCann_(politician)",
    "n": "Sean McCann",
    "lt": 2,
    "lead": "Chair, Energy & Environment; Appropriations majority vice chair 2023–26",
@@ -1187,6 +1362,9 @@
   },
   {
    "d": "MI-7",
+   "race": "Michigan's_7th_Congressional_District_election,_2026",
+   "bp": "William_Lawrence_(Michigan)",
+   "wp": "William_Lawrence_(Michigan_politician)",
    "n": "William Lawrence",
    "p": "D",
    "st": "Called",
@@ -1207,6 +1385,9 @@
   },
   {
    "d": "MI-10",
+   "race": "Michigan's_10th_Congressional_District_election,_2026",
+   "bp": "Christina_Hines",
+   "wp": "Christina_Hines",
    "n": "Christina Hines",
    "p": "D",
    "st": "Called",
@@ -1227,6 +1408,9 @@
   },
   {
    "d": "MI-11",
+   "race": "Michigan's_11th_Congressional_District_election,_2026",
+   "bp": "Jeremy_Moss",
+   "wp": "Jeremy_Moss",
    "n": "Jeremy Moss",
    "lt": 1,
    "lead": "Senate President pro tempore 2023–26; chaired Elections and Regulatory Reform; Finance majority vice chair",
@@ -1251,6 +1435,9 @@
   },
   {
    "d": "MI-13",
+   "race": "Michigan's_13th_Congressional_District_election,_2026",
+   "bp": "Donavan_McKinney",
+   "wp": "Donavan_McKinney",
    "n": "Donavan McKinney",
    "p": "D",
    "st": "Called",
@@ -1273,6 +1460,13 @@
   },
   {
    "d": "MN-1",
+   "race": "Minnesota's_1st_Congressional_District_election,_2026",
+   "bp": "Jake_Johnson_(Minnesota)",
+   "wp": "Jake_Johnson_(Minnesota_politician)",
+   "res": {
+    "label": "Minnesota Secretary of State",
+    "url": "https://electionresults.sos.mn.gov/"
+   },
    "n": "Jake Johnson",
    "p": "D",
    "st": "Uncalled — leads",
@@ -1298,6 +1492,9 @@
   },
   {
    "d": "MN-2",
+   "race": "Minnesota's_2nd_Congressional_District_election,_2026",
+   "bp": "Matt_Little",
+   "wp": "Matt_Little",
    "n": "Matt Little",
    "p": "D",
    "st": "Called",
@@ -1318,6 +1515,9 @@
   },
   {
    "d": "MO-2",
+   "race": "Missouri's_2nd_Congressional_District_election,_2026",
+   "bp": "Frederick_Wellman",
+   "wp": "Fred_Wellman",
    "n": "Fred Wellman",
    "p": "D",
    "st": "Called",
@@ -1340,6 +1540,9 @@
   },
   {
    "d": "MO-6",
+   "race": "Missouri's_6th_Congressional_District_election,_2026",
+   "bp": "Chris_Stigall",
+   "wp": "Chris_Stigall",
    "n": "Chris Stigall",
    "p": "R",
    "st": "Called",
@@ -1365,6 +1568,9 @@
   },
   {
    "d": "MT-1",
+   "race": "Montana's_1st_Congressional_District_election,_2026",
+   "bp": "Sam_Forstag",
+   "wp": "Sam_Forstag",
    "n": "Sam Forstag",
    "p": "D",
    "st": "Called",
@@ -1390,6 +1596,9 @@
   },
   {
    "d": "NE-2",
+   "race": "Nebraska's_2nd_Congressional_District_election,_2026",
+   "bp": "Denise_Powell",
+   "wp": "Denise_Powell",
    "n": "Denise Powell",
    "p": "D",
    "st": "Called",
@@ -1412,6 +1621,9 @@
   },
   {
    "d": "NV-2",
+   "race": "Nevada's_2nd_Congressional_District_election,_2026",
+   "bp": "Teresa_Benitez-Thompson",
+   "wp": "Teresa_Benitez-Thompson",
    "n": "Teresa Benitez-Thompson",
    "lt": 1,
    "lead": "Assembly Majority Leader 2016–22; Ways & Means and Revenue vice chair",
@@ -1436,6 +1648,9 @@
   },
   {
    "d": "NH-1",
+   "race": "New_Hampshire's_1st_Congressional_District_election,_2026",
+   "bp": "Stefany_Shaheen",
+   "wp": "Stefany_Shaheen",
    "n": "Stefany Shaheen",
    "p": "D",
    "st": "Called",
@@ -1456,6 +1671,9 @@
   },
   {
    "d": "NJ-2",
+   "race": "New_Jersey's_2nd_Congressional_District_election,_2026",
+   "bp": "Zack_Mullock",
+   "wp": "Zack_Mullock",
    "n": "Zack Mullock",
    "p": "D",
    "st": "Called",
@@ -1476,6 +1694,9 @@
   },
   {
    "d": "NJ-7",
+   "race": "New_Jersey's_7th_Congressional_District_election,_2026",
+   "bp": "Rebecca_Bennett_(New_Jersey)",
+   "wp": "Rebecca_Bennett_(politician)",
    "n": "Rebecca Bennett",
    "p": "D",
    "st": "Called",
@@ -1498,6 +1719,9 @@
   },
   {
    "d": "NJ-12",
+   "race": "New_Jersey's_12th_Congressional_District_election,_2026",
+   "bp": "Adam_Hamawy",
+   "wp": "Adam_Hamawy",
    "n": "Adam Hamawy",
    "p": "D",
    "st": "Called",
@@ -1520,6 +1744,9 @@
   },
   {
    "d": "NY-7",
+   "race": "New_York's_7th_Congressional_District_election,_2026",
+   "bp": "Claire_Valdez",
+   "wp": "Claire_Valdez",
    "n": "Claire Valdez",
    "p": "D",
    "st": "Called",
@@ -1542,6 +1769,9 @@
   },
   {
    "d": "NY-10",
+   "race": "New_York's_10th_Congressional_District_election,_2026",
+   "bp": "Brad_Lander",
+   "wp": "Brad_Lander",
    "n": "Brad Lander",
    "p": "D",
    "st": "Called",
@@ -1562,6 +1792,9 @@
   },
   {
    "d": "NY-12",
+   "race": "New_York's_12th_Congressional_District_election,_2026",
+   "bp": "Micah_Lasher",
+   "wp": "Micah_Lasher",
    "n": "Micah Lasher",
    "p": "D",
    "st": "Called",
@@ -1582,6 +1815,9 @@
   },
   {
    "d": "NY-13",
+   "race": "New_York's_13th_Congressional_District_election,_2026",
+   "bp": "Darializa_Avila_Chevalier",
+   "wp": "Darializa_Avila_Chevalier",
    "n": "Darializa Avila Chevalier",
    "p": "D",
    "st": "Called",
@@ -1604,6 +1840,9 @@
   },
   {
    "d": "NY-17",
+   "race": "New_York's_17th_Congressional_District_election,_2026",
+   "bp": "Cait_Conley",
+   "wp": "Cait_Conley",
    "n": "Cait Conley",
    "p": "D",
    "st": "Called",
@@ -1626,6 +1865,9 @@
   },
   {
    "d": "NY-21",
+   "race": "New_York's_21st_Congressional_District_election,_2026",
+   "bp": "Anthony_Constantino",
+   "wp": "Anthony_Constantino_(politician)",
    "n": "Anthony Constantino",
    "p": "R",
    "st": "Called",
@@ -1651,6 +1893,13 @@
   },
   {
    "d": "NC-3",
+   "race": "North_Carolina's_3rd_Congressional_District_election,_2026",
+   "bp": "Raymond_Smith_Jr.",
+   "wp": "Raymond_Smith_Jr.",
+   "res": {
+    "label": "NC State Board of Elections",
+    "url": "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0"
+   },
    "n": "Raymond Smith Jr.",
    "p": "D",
    "st": "Uncalled — trails",
@@ -1674,6 +1923,13 @@
   },
   {
    "d": "NC-5",
+   "race": "North_Carolina's_5th_Congressional_District_election,_2026",
+   "bp": "Chuck_Hubbard",
+   "wp": "Chuck_Hubbard",
+   "res": {
+    "label": "NC State Board of Elections",
+    "url": "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0"
+   },
    "n": "Chuck Hubbard",
    "p": "D",
    "st": "Uncalled — leads",
@@ -1694,6 +1950,9 @@
   },
   {
    "d": "NC-6",
+   "race": "North_Carolina's_6th_Congressional_District_election,_2026",
+   "bp": "Cyril_Jefferson",
+   "wp": "Cyril_Jefferson",
    "n": "Cyril Jefferson",
    "p": "D",
    "st": "Called",
@@ -1721,6 +1980,13 @@
   },
   {
    "d": "NC-7",
+   "race": "North_Carolina's_7th_Congressional_District_election,_2026",
+   "bp": "Kimberly_Hardy",
+   "wp": null,
+   "res": {
+    "label": "NC State Board of Elections",
+    "url": "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0"
+   },
    "n": "Kim Hardy",
    "p": "D",
    "st": "Uncalled — trails",
@@ -1743,6 +2009,9 @@
   },
   {
    "d": "NC-9",
+   "race": "North_Carolina's_9th_Congressional_District_election,_2026",
+   "bp": "Richard_Ojeda",
+   "wp": "Richard_Ojeda",
    "n": "Richard Ojeda",
    "p": "D",
    "st": "Called",
@@ -1765,6 +2034,13 @@
   },
   {
    "d": "NC-10",
+   "race": "North_Carolina's_10th_Congressional_District_election,_2026",
+   "bp": "Ashley_Bell_(North_Carolina)",
+   "wp": null,
+   "res": {
+    "label": "NC State Board of Elections",
+    "url": "https://er.ncsbe.gov/?election_dt=11/03/2026&county_id=0&office=FED&contest=0"
+   },
    "n": "Ashley Bell",
    "p": "D",
    "st": "Uncalled — trails",
@@ -1779,6 +2055,9 @@
   },
   {
    "d": "NC-11",
+   "race": "North_Carolina's_11th_Congressional_District_election,_2026",
+   "bp": "Jamie_Ager",
+   "wp": "Jamie_Ager",
    "n": "Jamie Ager",
    "p": "D",
    "st": "Called",
@@ -1804,6 +2083,9 @@
   },
   {
    "d": "NC-13",
+   "race": "North_Carolina's_13th_Congressional_District_election,_2026",
+   "bp": "Paul_Barringer",
+   "wp": "Paul_Barringer_(attorney)",
    "n": "Paul Barringer",
    "p": "D",
    "st": "Called",
@@ -1824,6 +2106,9 @@
   },
   {
    "d": "NC-14",
+   "race": "North_Carolina's_14th_Congressional_District_election,_2026",
+   "bp": "Lakesha_Womack",
+   "wp": "LaKesha_Womack",
    "n": "LaKesha Womack",
    "p": "D",
    "st": "Called",
@@ -1846,6 +2131,9 @@
   },
   {
    "d": "OH-7",
+   "race": "Ohio's_7th_Congressional_District_election,_2026",
+   "bp": "Brian_Poindexter",
+   "wp": "Brian_Poindexter",
    "n": "Brian Poindexter",
    "p": "D",
    "st": "Called",
@@ -1871,6 +2159,9 @@
   },
   {
    "d": "OH-10",
+   "race": "Ohio's_10th_Congressional_District_election,_2026",
+   "bp": "Kristina_Knickerbocker",
+   "wp": "Kristina_Knickerbocker",
    "n": "Kristina Knickerbocker",
    "p": "D",
    "st": "Called",
@@ -1893,6 +2184,9 @@
   },
   {
    "d": "OH-15",
+   "race": "Ohio's_15th_Congressional_District_election,_2026",
+   "bp": "Don_Leonard",
+   "wp": "Don_Leonard_(politician)",
    "n": "Don Leonard",
    "p": "D",
    "st": "Called",
@@ -1913,6 +2207,9 @@
   },
   {
    "d": "OK-1",
+   "race": "Oklahoma's_1st_Congressional_District_election,_2026",
+   "bp": "Mark_Tedford",
+   "wp": "Mark_Tedford",
    "n": "Mark Tedford",
    "lt": 3,
    "lead": "Vice chair, Commerce & Economic Development Oversight; vice chair, Insurance (2023–24)",
@@ -1945,6 +2242,9 @@
   },
   {
    "d": "PA-1",
+   "race": "Pennsylvania's_1st_Congressional_District_election,_2026",
+   "bp": "Bob_Harvie",
+   "wp": "Bob_Harvie_(politician)",
    "n": "Bob Harvie",
    "p": "D",
    "st": "Called",
@@ -1970,6 +2270,9 @@
   },
   {
    "d": "PA-3",
+   "race": "Pennsylvania's_3rd_Congressional_District_election,_2026",
+   "bp": "Christopher_Rabb",
+   "wp": "Chris_Rabb",
    "n": "Chris Rabb",
    "lt": 3,
    "lead": "Subcommittee chair, Commerce (Local Business) and Finance (Tax Modernization); Agriculture vice chair 2019–20",
@@ -1994,6 +2297,9 @@
   },
   {
    "d": "PA-7",
+   "race": "Pennsylvania's_7th_Congressional_District_election,_2026",
+   "bp": "Bob_Brooks_(Pennsylvania)",
+   "wp": "Bob_Brooks_(Pennsylvania_politician)",
    "n": "Bob Brooks",
    "p": "D",
    "st": "Called",
@@ -2024,6 +2330,9 @@
   },
   {
    "d": "PA-8",
+   "race": "Pennsylvania's_8th_Congressional_District_election,_2026",
+   "bp": "Paige_Cognetti",
+   "wp": "Paige_Cognetti",
    "n": "Paige Cognetti",
    "p": "D",
    "st": "Called",
@@ -2044,6 +2353,9 @@
   },
   {
    "d": "PA-10",
+   "race": "Pennsylvania's_10th_Congressional_District_election,_2026",
+   "bp": "Janelle_Stelson",
+   "wp": "Janelle_Stelson",
    "n": "Janelle Stelson",
    "p": "D",
    "st": "Called",
@@ -2064,6 +2376,9 @@
   },
   {
    "d": "SC-1",
+   "race": "South_Carolina's_1st_Congressional_District_election,_2026",
+   "bp": "Nancy_Lacore",
+   "wp": "Nancy_Lacore",
    "n": "Nancy Lacore",
    "p": "D",
    "st": "Called",
@@ -2091,6 +2406,13 @@
   },
   {
    "d": "SC-2",
+   "race": "South_Carolina's_2nd_Congressional_District_election,_2026",
+   "bp": "Zyon_Khalifa",
+   "wp": null,
+   "res": {
+    "label": "SC Election Commission",
+    "url": "https://www.enr-scvotes.org/SC/127300/"
+   },
    "n": "Zyon Khalifa",
    "p": "D",
    "st": "Uncalled — trails",
@@ -2103,10 +2425,13 @@
    "ident": [
     "Veterans caucuses"
    ],
-   "note": "Trails Wilson by roughly 2,900–3,000 votes; certified county results put the margin at 0.99 pts, inside South Carolina's 1% mandatory-recount threshold, so a recount is pending (WACH, 11/06). Likely loss."
+   "note": "Trails Wilson 48.83–49.82 (144,865–147,791, −2,926; 0.99 pts) per the SC Election Commission with all counties reporting, 11/06. Inside South Carolina's 1% mandatory-recount threshold, so a recount is pending (WACH, 11/06). Likely loss."
   },
   {
    "d": "SC-5",
+   "race": "South_Carolina's_5th_Congressional_District_election,_2026",
+   "bp": "Wes_Climer",
+   "wp": "Wes_Climer",
    "n": "Wes Climer",
    "lt": 2,
    "lead": "Chair, Agriculture & Natural Resources 2021–22 and 2025–26",
@@ -2134,6 +2459,9 @@
   },
   {
    "d": "SD-AL",
+   "race": "South_Dakota's_At-large_Congressional_District_election,_2026",
+   "bp": "Marty_J._Jackley",
+   "wp": "Marty_Jackley",
    "n": "Marty Jackley",
    "p": "R",
    "st": "Called",
@@ -2164,6 +2492,9 @@
   },
   {
    "d": "TN-4",
+   "race": "Tennessee's_4th_Congressional_District_election,_2026",
+   "bp": "Victoria_Broderick",
+   "wp": "Victoria_Broderick",
    "n": "Victoria Broderick",
    "p": "D",
    "st": "Called",
@@ -2184,6 +2515,9 @@
   },
   {
    "d": "TN-5",
+   "race": "Tennessee's_5th_Congressional_District_election,_2026",
+   "bp": "Charlie_Hatcher",
+   "wp": "Charlie_Hatcher",
    "n": "Charlie Hatcher",
    "p": "R",
    "st": "Called",
@@ -2214,6 +2548,9 @@
   },
   {
    "d": "TN-6",
+   "race": "Tennessee's_6th_Congressional_District_election,_2026",
+   "bp": "Johnny_Garrett",
+   "wp": "Johnny_Garrett_(politician)",
    "n": "Johnny Garrett",
    "lt": 1,
    "lead": "House Majority Whip 2023–26 (WVLT; TN House GOP); Judiciary vice chair 2019–20",
@@ -2236,6 +2573,9 @@
   },
   {
    "d": "TN-9",
+   "race": "Tennessee's_9th_Congressional_District_election,_2026",
+   "bp": "Brent_Taylor_(Tennessee)",
+   "wp": "Brent_Taylor_(Tennessee_politician)",
    "n": "Brent Taylor",
    "lt": 3,
    "lead": "2nd vice chair, Transportation & Safety (2023–24)",
@@ -2268,6 +2608,9 @@
   },
   {
    "d": "TX-2",
+   "race": "Texas'_2nd_Congressional_District_election,_2026",
+   "bp": "Steve_Toth",
+   "wp": "Steve_Toth",
    "n": "Steve Toth",
    "lt": 3,
    "lead": "Vice chair, Calendars (2021–22); Texas Freedom Caucus member",
@@ -2290,6 +2633,9 @@
   },
   {
    "d": "TX-8",
+   "race": "Texas'_8th_Congressional_District_election,_2026",
+   "bp": "Jessica_Steinmann",
+   "wp": "Jessica_Steinmann",
    "n": "Jessica Steinmann",
    "p": "R",
    "st": "Called",
@@ -2320,6 +2666,9 @@
   },
   {
    "d": "TX-9",
+   "race": "Texas'_9th_Congressional_District_election,_2026",
+   "bp": "Leticia_Gutierrez",
+   "wp": "Leticia_Gutierrez",
    "n": "Leticia Gutierrez",
    "p": "D",
    "st": "Called",
@@ -2347,6 +2696,9 @@
   },
   {
    "d": "TX-10",
+   "race": "Texas'_10th_Congressional_District_election,_2026",
+   "bp": "Chris_Gober",
+   "wp": "Chris_Gober",
    "n": "Chris Gober",
    "p": "R",
    "st": "Called",
@@ -2377,6 +2729,9 @@
   },
   {
    "d": "TX-15",
+   "race": "Texas'_15th_Congressional_District_election,_2026",
+   "bp": "Bobby_Pulido",
+   "wp": "Bobby_Pulido",
    "n": "Bobby Pulido",
    "p": "D",
    "st": "Called",
@@ -2404,6 +2759,9 @@
   },
   {
    "d": "TX-19",
+   "race": "Texas'_19th_Congressional_District_election,_2026",
+   "bp": "Tom_Sell",
+   "wp": "Tom_Sell",
    "n": "Tom Sell",
    "p": "R",
    "st": "Called",
@@ -2434,6 +2792,9 @@
   },
   {
    "d": "TX-21",
+   "race": "Texas'_21st_Congressional_District_election,_2026",
+   "bp": "Mark_Teixeira",
+   "wp": "Mark_Teixeira",
    "n": "Mark Teixeira",
    "p": "R",
    "st": "Called",
@@ -2464,6 +2825,9 @@
   },
   {
    "d": "TX-22",
+   "race": "Texas'_22nd_Congressional_District_election,_2026",
+   "bp": "Trever_Nehls",
+   "wp": "Trever_Nehls",
    "n": "Trever Nehls",
    "p": "R",
    "st": "Called",
@@ -2492,6 +2856,9 @@
   },
   {
    "d": "TX-23",
+   "race": "Texas'_23rd_Congressional_District_election,_2026",
+   "bp": "Katy_Padilla_Stout",
+   "wp": "Katy_Padilla_Stout",
    "n": "Katy Padilla Stout",
    "p": "D",
    "st": "Called",
@@ -2519,6 +2886,9 @@
   },
   {
    "d": "TX-30",
+   "race": "Texas'_30th_Congressional_District_election,_2026",
+   "bp": "Frederick_Haynes",
+   "wp": "Frederick_Haynes_III",
    "n": "Frederick Haynes III",
    "p": "D",
    "st": "Called",
@@ -2541,6 +2911,9 @@
   },
   {
    "d": "TX-32",
+   "race": "Texas'_32nd_Congressional_District_election,_2026",
+   "bp": "Jace_Yarbrough",
+   "wp": "Jace_Yarbrough",
    "n": "Jace Yarbrough",
    "p": "R",
    "st": "Called",
@@ -2563,6 +2936,9 @@
   },
   {
    "d": "TX-33",
+   "race": "Texas'_33rd_Congressional_District_election,_2026",
+   "bp": "Colin_Allred",
+   "wp": "Colin_Allred",
    "n": "Colin Allred",
    "p": "D",
    "st": "Called",
@@ -2585,6 +2961,9 @@
   },
   {
    "d": "TX-35",
+   "race": "Texas'_35th_Congressional_District_election,_2026",
+   "bp": "Johnny_Garcia_(Texas_congressional_candidate)",
+   "wp": "Johnny_Garcia_(politician)",
    "n": "Johnny Garcia",
    "p": "D",
    "st": "Called",
@@ -2613,6 +2992,9 @@
   },
   {
    "d": "TX-38",
+   "race": "Texas'_38th_Congressional_District_election,_2026",
+   "bp": "Jon_Bonck",
+   "wp": "Jon_Bonck",
    "n": "Jon Bonck",
    "p": "R",
    "st": "Called",
@@ -2633,6 +3015,9 @@
   },
   {
    "d": "UT-1",
+   "race": "Utah's_1st_Congressional_District_election,_2026",
+   "bp": "Ben_McAdams_(Utah)",
+   "wp": "Ben_McAdams",
    "n": "Ben McAdams",
    "p": "D",
    "st": "Called",
@@ -2663,6 +3048,9 @@
   },
   {
    "d": "VA-1",
+   "race": "Virginia's_1st_Congressional_District_election,_2026",
+   "bp": "Shannon_Taylor_(Virginia)",
+   "wp": "Shannon_Taylor_(politician)",
    "n": "Shannon Taylor",
    "p": "D",
    "st": "Called",
@@ -2683,6 +3071,9 @@
   },
   {
    "d": "VA-2",
+   "race": "Virginia's_2nd_Congressional_District_election,_2026",
+   "bp": "Elaine_Luria",
+   "wp": "Elaine_Luria",
    "n": "Elaine Luria",
    "lt": 2,
    "lead": "Vice chair, House Armed Services (117th Congress)",
@@ -2712,6 +3103,9 @@
   },
   {
    "d": "WA-4",
+   "race": "Washington's_4th_Congressional_District_election,_2026",
+   "bp": "Amanda_McKinney_(Washington)",
+   "wp": "Amanda_McKinney",
    "n": "Amanda McKinney",
    "p": "R",
    "st": "Called",
@@ -2742,6 +3136,13 @@
   },
   {
    "d": "WA-5",
+   "race": "Washington's_5th_Congressional_District_election,_2026",
+   "bp": "Carmela_Conroy",
+   "wp": "Carmela_Conroy",
+   "res": {
+    "label": "Washington Secretary of State",
+    "url": "https://results.votewa.gov/results/public/washington/elections/20261103/ballot-items/54c40000-9064-bbec-6f41-08df15c0a82a"
+   },
    "n": "Carmela Conroy",
    "p": "D",
    "st": "Uncalled — trails",
@@ -2752,10 +3153,13 @@
    "other": "U.S. Foreign Service officer; deputy prosecutor; Naval War College",
    "cau": [],
    "ident": [],
-   "note": "Trails Baumgartner 48.7–50.9 (110,459–115,423, −4,964) with the lead widening in later counts (WA Secretary of State via Ballotpedia, 11/07; NWPB, 11/05); counties certify 11/24. Likely loss."
+   "note": "Trails Baumgartner 48.10–51.55 (130,652–140,011, −9,359) per the Washington Secretary of State, 11/07, with the gap widening in each count; counties certify 11/24. Likely loss."
   },
   {
    "d": "WI-1",
+   "race": "Wisconsin's_1st_Congressional_District_election,_2026",
+   "bp": "Mitchell_Berman",
+   "wp": "Mitchell_Berman_(politician)",
    "n": "Mitchell Berman",
    "p": "D",
    "st": "Called",
@@ -2781,6 +3185,9 @@
   },
   {
    "d": "WI-3",
+   "race": "Wisconsin's_3rd_Congressional_District_election,_2026",
+   "bp": "Rebecca_Cooke",
+   "wp": "Rebecca_Cooke",
    "n": "Rebecca Cooke",
    "p": "D",
    "st": "Called",
@@ -2806,6 +3213,9 @@
   },
   {
    "d": "WI-7",
+   "race": "Wisconsin's_7th_Congressional_District_election,_2026",
+   "bp": "Michael_Alfonso",
+   "wp": "Michael_Alfonso_(politician)",
    "n": "Michael Alfonso",
    "p": "R",
    "st": "Called",
@@ -2836,6 +3246,9 @@
   },
   {
    "d": "WY-AL",
+   "race": "Wyoming's_At-Large_Congressional_District_election,_2026",
+   "bp": "Chuck_Gray_(Wyoming)",
+   "wp": "Chuck_Gray_(Wyoming_politician)",
    "n": "Chuck Gray",
    "p": "R",
    "st": "Called",
@@ -2861,6 +3274,9 @@
   },
   {
    "d": "DC-AL",
+   "race": "District_of_Columbia's_At-large_Congressional_District_election,_2026",
+   "bp": "Robert_White_(District_of_Columbia)",
+   "wp": "Robert_White_(Washington,_D.C.,_politician)",
    "n": "Robert White",
    "lt": 2,
    "lead": "Chair, D.C. Council Committee on Housing 2023– (Bisnow; DC Council)",
@@ -2885,6 +3301,9 @@
   },
   {
    "d": "VI-AL",
+   "race": "Virgin_Islands'_At-large_Congressional_District_election,_2026",
+   "bp": "Janelle_Sarauw",
+   "wp": "Janelle_Sarauw",
    "n": "Janelle Sarauw",
    "lt": 2,
    "lead": "Chair, Committee on Disaster Recovery & Infrastructure, 34th Legislature (V.I. Consortium)",

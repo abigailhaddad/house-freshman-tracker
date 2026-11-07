@@ -221,6 +221,7 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
     <li><strong>Timing.</strong> Nobody has joined anything yet. Freshmen typically announce caucus memberships in December and January.</li>
   </ul>
   <p><strong>Known gaps.</strong> Bios are thin for several open-seat Republicans in Florida and Texas (Rogers, Strada, Gruters, Schwartzel, Bonck) and for Dembo (KY-6). Vote margins in uncalled races were last refreshed on 2026-11-07 from state election boards (NCSBE, CA and CO Secretaries of State, SC and WA certified or official counts) and local reporting cited in each row; none of the twelve has been called by AP. Recounts are requested or automatic in MN-1 (Johnson +323), FL-27 (Rodriguez −1,100) and SC-2 (Khalifa −0.99 pts); NC-5 (Hubbard +99), NC-3 (Smith −233) and NC-7 (Hardy −0.76 pts) are inside North Carolina's 1% threshold ahead of the 11/13 canvass; FL-7 (Elijah +0.505 pts) sits just outside Florida's. CA-4, CO-4, AZ-2 and WA-5 are still counting.</p>
+  <p><strong>Per-member links.</strong> Each detail row links to the race on Ballotpedia and to the member on Ballotpedia and Wikipedia. Member links are taken from each race's own candidate listing, not built from the name, so they point at the right person; six members with no Wikipedia article have no Wikipedia link. Uncalled races and the Louisiana runoffs also link to the official state count, which is the number to trust over anything here.</p>
   <p><strong>Primary sources.</strong> <span class="srcs"><a href="https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections">Wikipedia 2026 House elections</a> · <a href="https://ballotpedia.org/United_States_House_of_Representatives_elections,_2026">Ballotpedia 2026 House</a> · <a href="https://www.newdemactionfund.com/candidates">NewDem Action Fund candidates</a> · <a href="https://bluedogdems.com/news/">Blue Dog PAC</a> · <a href="https://freedomcaucusfund.com/endorsements/">Freedom Caucus Fund</a> · <a href="https://www.mainstreetrepublicanpac.com/candidates">Main Street Republican PAC</a> · <a href="https://www.fec.gov/data/committee/C00433060/">RGG/Tuesday Group PAC (FEC)</a> · <a href="https://ballotpedia.org/Endorsements_by_Congressional_Progressive_Caucus_PAC">CPC PAC (Ballotpedia)</a> · <a href="https://ballotpedia.org/Endorsements_by_Justice_Democrats_PAC">Justice Democrats (Ballotpedia)</a> · <a href="https://rollcall.com/2026/11/04/history-makers-congress-house-senate-governor/">Roll Call, history-makers</a> · <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/">CBS News results</a></span></p>
 </section>
 
@@ -288,8 +289,10 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
     return a+(a&&b?'<br>':'')+b||'<span class="leg-no">Unclear</span>';
   }
   function detail(r){
-    const bp='https://ballotpedia.org/'+slug(r.n.replace(/\.$/,''));
-    const wp='https://en.wikipedia.org/wiki/'+slug(r.n);
+    const bpu=p=>'https://ballotpedia.org/'+encodeURIComponent(p).replace(/%2C/g,',').replace(/%2F/g,'/');
+    const bp=bpu(r.bp||slug(r.n.replace(/\.$/,'')));
+    const wp=r.wp===null?null:'https://en.wikipedia.org/wiki/'+encodeURIComponent(r.wp||slug(r.n)).replace(/%2C/g,',');
+    const race=r.race?bpu(r.race):null;
     return '<div class="dgrid">'+
       '<div><h4>Predecessor</h4><p>'+esc(r.pred)+'</p></div>'+
       '<div><h4>Prior legislative service</h4><p>'+(r.leg?esc(r.leg):'None')+'</p></div>'+
@@ -298,7 +301,9 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
       '<div><h4>Other offices / career</h4><p>'+esc(r.other||'—')+'</p></div>'+
       '<div><h4>Caucus basis</h4>'+((r.cau||[]).length?'<ul>'+(r.cau||[]).map(c=>'<li>'+esc(c.c)+' <span class="conf '+c.lvl+'">'+c.lvl+'</span> <span class="why">'+esc(c.why)+'</span></li>').join('')+'</ul>':'<p>No ideological-caucus signal found.</p>')+
       ((r.ident||[]).length?'<p class="why">Identity/affinity: '+esc(r.ident.join('; '))+'</p>':'')+'</div>'+
-      '<div><h4>Notes</h4><p>'+esc(r.note||'—')+'</p><p class="srcs" style="margin-top:6px"><a href="'+bp+'" target="_blank" rel="noopener">Ballotpedia</a> · <a href="'+wp+'" target="_blank" rel="noopener">Wikipedia</a></p></div>'+
+      '<div><h4>Notes</h4><p>'+esc(r.note||'—')+'</p><p class="srcs" style="margin-top:6px">'+
+        (race?'Race: <a href="'+race+'" target="_blank" rel="noopener">Ballotpedia</a>'+(r.res?' · <a href="'+esc(r.res.url)+'" target="_blank" rel="noopener">Official count ('+esc(r.res.label)+')</a>':'')+'<br>':'')+
+        'Member: <a href="'+bp+'" target="_blank" rel="noopener">Ballotpedia</a>'+(wp?' · <a href="'+wp+'" target="_blank" rel="noopener">Wikipedia</a>':'')+'</p></div>'+
     '</div>';
   }
   const tbody=document.getElementById('tbody');
