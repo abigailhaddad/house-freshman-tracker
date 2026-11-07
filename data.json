@@ -11,7 +11,7 @@
  "changelog": [
   {
    "d": "2026-11-07",
-   "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. MN-1: Finstad requested a recount; Jake Johnson leads by 323 votes. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv."
+   "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. Margins refreshed for all twelve uncalled rows from state election boards and local reporting: recounts pending or requested in MN-1, FL-27 and SC-2; NC-3, NC-5 and NC-7 inside recount range ahead of the 11/13 canvass; FL-7 a hair outside; CA-4, CO-4, AZ-2 and WA-5 still counting. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv."
   },
   {
    "d": "2026-11-06",
@@ -90,7 +90,7 @@
    "ident": [
     "Congressional Native American Caucus"
    ],
-   "note": "Trailing Crane by ~1.2 pts with ~90% counted (tracker, 11/06). Likely loss."
+   "note": "Trails Crane 48.5–49.7 (155,585–159,466, −3,881) with Arizona still counting late early ballots; AP has not called it (azfamily, 11/06; Ballotpedia, 11/07). Likely loss."
   },
   {
    "d": "AZ-5",
@@ -187,7 +187,7 @@
     }
    ],
    "ident": [],
-   "note": "Leads Thompson by ~2.9 pts at 100% reported (tracker, 11/06); would be a D-on-D incumbent defeat. Verify before treating as member-elect."
+   "note": "Leads Thompson 51.6–48.4 (72,473–68,108, +4,365) per the California Secretary of State as of 11/06 11 p.m.; a large share of vote-by-mail ballots remain, and the canvass runs to 12/11. Would be a D-on-D incumbent defeat. Not called."
   },
   {
    "d": "CA-6",
@@ -399,7 +399,7 @@
    "ident": [
     "Veterans caucuses"
    ],
-   "note": "Leads Boebert by ~0.8 pts at 99% (tracker, 11/06). Uncalled."
+   "note": "Leads Boebert by 3,069 votes (under 1 pt) per the Colorado Secretary of State's 11/05 evening update (Gazette, 11/06); military, overseas and cured ballots still arriving. The Boebert campaign is alleging 'unusual voting patterns' (Denver Gazette, 11/06). Not called."
   },
   {
    "d": "CO-5",
@@ -513,7 +513,7 @@
     }
    ],
    "ident": [],
-   "note": "Leads Bale Dalton (D; NewDem-endorsed, no legislative service) by ~0.5 pts at 100%. Uncalled."
+   "note": "Leads Dalton 49.7–49.2 (161,300–159,669, +1,631; 0.505 pts), a hair outside Florida's 0.5% machine-recount threshold; the first unofficial returns due 11/07 determine whether a recount is ordered (Florida Today, 11/06). Not called."
   },
   {
    "d": "FL-11",
@@ -649,7 +649,7 @@
    "ident": [
     "Congressional Hispanic Caucus"
    ],
-   "note": "Trails by ~0.5 pts at 100%. Likely loss."
+   "note": "Trails Salazar by about 1,100 votes (123,438–124,528; 0.44 pts). Automatic machine recount, expected to begin the week of 11/09; the Rodriguez campaign is suing to force the Miami-Dade elections supervisor's recusal (WSVN, 11/06). Likely loss."
   },
   {
    "d": "GA-1",
@@ -1294,7 +1294,7 @@
     }
    ],
    "ident": [],
-   "note": "Leads Finstad by 323 votes (<0.1 pt) per Secretary of State tabulation; Finstad has requested a recount, which will run county by county and may take weeks (MPR, 11/05). Johnson declared victory."
+   "note": "Leads Finstad by 323 votes (under 0.1 pt). Finstad has requested a recount; county canvasses run 11/06–13, the State Canvassing Board meets 11/19, and the recount follows (MPR, 11/05; FOX 9, 11/05). Johnson has declared victory."
   },
   {
    "d": "MN-2",
@@ -1670,7 +1670,7 @@
     "Congressional Black Caucus",
     "Veterans caucuses"
    ],
-   "note": "Trails Murphy by 233 votes at 100% (tracker, 11/06). Recount territory."
+   "note": "Trails Murphy by 233 votes (117,350–117,583; 0.1 pt) per NCSBE as of 11/06; provisional and late absentee ballots are added at the 11/13 county canvass; inside North Carolina's 1% recount threshold. Not called."
   },
   {
    "d": "NC-5",
@@ -1690,7 +1690,7 @@
     }
    ],
    "ident": [],
-   "note": "Leads Foxx by 99 votes pending provisional ballots and a likely recount (WFMY, ABC45, 11/05–06). Would be the upset of the cycle."
+   "note": "Leads Foxx by 99 votes (139,034–138,935) per NCSBE as of 11/06; up to about 3,130 provisional ballots district-wide are still under review (county boards meet 11/10, canvass 11/13) and military ballots remain outstanding; a recount is likely either way (Watauga Democrat, 11/05). Would be the upset of the cycle. Not called."
   },
   {
    "d": "NC-6",
@@ -1739,7 +1739,7 @@
    "ident": [
     "Congressional Black Caucus"
    ],
-   "note": "Trails by ~0.8 pts (2,425 votes) at 100%. Likely loss."
+   "note": "Trails Rouzer by 2,425 votes (157,560–159,985; 0.76 pts) per NCSBE as of 11/06; inside the 1% recount threshold; canvass 11/13. Likely loss."
   },
   {
    "d": "NC-9",
@@ -1775,7 +1775,7 @@
    "other": "Physician assistant; educator",
    "cau": [],
    "ident": [],
-   "note": "Trails by ~1.0 pt at 100%. Likely loss."
+   "note": "Trails Harrigan by 3,029 votes (143,137–146,166; 1.03 pts) per NCSBE as of 11/06; just outside the 1% recount threshold; canvass 11/13. Likely loss."
   },
   {
    "d": "NC-11",
@@ -2103,7 +2103,7 @@
    "ident": [
     "Veterans caucuses"
    ],
-   "note": "Trails by ~1.0 pt at 100%. Likely loss."
+   "note": "Trails Wilson by roughly 2,900–3,000 votes; certified county results put the margin at 0.99 pts, inside South Carolina's 1% mandatory-recount threshold, so a recount is pending (WACH, 11/06). Likely loss."
   },
   {
    "d": "SC-5",
@@ -2752,7 +2752,7 @@
    "other": "U.S. Foreign Service officer; deputy prosecutor; Naval War College",
    "cau": [],
    "ident": [],
-   "note": "Trails by ~2.1 pts at 84% (tracker, 11/06). Washington counts slowly; watch."
+   "note": "Trails Baumgartner 48.7–50.9 (110,459–115,423, −4,964) with the lead widening in later counts (WA Secretary of State via Ballotpedia, 11/07; NWPB, 11/05); counties certify 11/24. Likely loss."
   },
   {
    "d": "WI-1",
