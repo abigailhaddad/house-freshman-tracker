@@ -8,7 +8,10 @@
 <meta name="google-site-verification" content="f8EZMPmeL1Fiuy56MrKHIKJm6-Yr5ntiLlA0GBMJwUQ" />
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://sorendayton.github.io/house-freshman-tracker/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="alternate" type="application/json" href="https://sorendayton.github.io/house-freshman-tracker/data.json" title="Tracker data (JSON)">
+<link rel="alternate" type="text/csv" href="https://sorendayton.github.io/house-freshman-tracker/data.csv" title="Tracker data (CSV)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="120th House Freshman Tracker">
 <meta property="og:title" content="120th House Freshman Tracker">
@@ -45,7 +48,8 @@
   "temporalCoverage": "2026-11-03/..",
   "spatialCoverage": {"@type": "Place","name": "United States"},
   "distribution": [
-    {"@type": "DataDownload","encodingFormat": "application/json","contentUrl": "https://sorendayton.github.io/house-freshman-tracker/data.json"}
+    {"@type": "DataDownload","encodingFormat": "application/json","contentUrl": "https://sorendayton.github.io/house-freshman-tracker/data.json"},
+    {"@type": "DataDownload","encodingFormat": "text/csv","contentUrl": "https://sorendayton.github.io/house-freshman-tracker/data.csv"}
   ]
 }
 </script>
@@ -121,6 +125,11 @@ tr.row.open td{border-bottom:none}
 td.dist{font-family:var(--mono);font-size:13px;white-space:nowrap}
 td.name{font-weight:600;white-space:nowrap}
 td.name .ret{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+td.name .anchor{margin-left:6px;color:var(--muted);text-decoration:none;font-weight:400;opacity:0;font-family:var(--mono);font-size:12px}
+tr.row:hover .anchor,tr.row:focus .anchor,tr.row.open .anchor{opacity:1}
+td.name .anchor:hover{color:var(--accent)}
+tr.row{scroll-margin-top:110px}
+tr.row.flash td{box-shadow:inset 3px 0 0 var(--accent)}
 .pill{display:inline-block;font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;line-height:1.6;white-space:nowrap}
 .pill.D{background:var(--dem-soft);color:var(--dem)} .pill.R{background:var(--rep-soft);color:var(--rep)}
 .pill.st-called{background:var(--ok-soft);color:var(--ok)} .pill.st-leads{background:var(--warn-soft);color:var(--warn)} .pill.st-trails{background:var(--bad-soft);color:var(--bad)} .pill.st-runoff{background:var(--accent-soft);color:var(--accent)} .pill.st-del{background:var(--line-soft);color:var(--muted)}
@@ -148,6 +157,8 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
 .method ul{margin:6px 0 10px;padding-left:20px}
 .method li{margin:4px 0}
 .method code{font-family:var(--mono);font-size:12px}
+.updates li{list-style:none;margin:6px 0;padding-left:0}
+.updates li time{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:8px}
 .key{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);margin:8px 0 0}
 .empty{padding:28px;text-align:center;color:var(--muted)}
 @media (max-width:640px){ .filters{position:static} th{position:static} }
@@ -212,12 +223,19 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
   <p><strong>Known gaps.</strong> Bios are thin for several open-seat Republicans in Florida and Texas (Rogers, Strada, Gruters, Schwartzel, Bonck) and for Dembo (KY-6). Vote margins in uncalled races come from a third-party tracker dated 11/06 and from local reporting; confirm against AP before relying on them. The NC-5, MN-1, NC-3 and NY-21 margins are inside recount range.</p>
   <p><strong>Primary sources.</strong> <span class="srcs"><a href="https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections">Wikipedia 2026 House elections</a> · <a href="https://ballotpedia.org/United_States_House_of_Representatives_elections,_2026">Ballotpedia 2026 House</a> · <a href="https://www.newdemactionfund.com/candidates">NewDem Action Fund candidates</a> · <a href="https://bluedogdems.com/news/">Blue Dog PAC</a> · <a href="https://freedomcaucusfund.com/endorsements/">Freedom Caucus Fund</a> · <a href="https://www.mainstreetrepublicanpac.com/candidates">Main Street Republican PAC</a> · <a href="https://www.fec.gov/data/committee/C00433060/">RGG/Tuesday Group PAC (FEC)</a> · <a href="https://ballotpedia.org/Endorsements_by_Congressional_Progressive_Caucus_PAC">CPC PAC (Ballotpedia)</a> · <a href="https://ballotpedia.org/Endorsements_by_Justice_Democrats_PAC">Justice Democrats (Ballotpedia)</a> · <a href="https://rollcall.com/2026/11/04/history-makers-congress-house-senate-governor/">Roll Call, history-makers</a> · <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/">CBS News results</a></span></p>
 </section>
+
+<section class="method updates" id="updates">
+  <h2>Updates</h2>
+  <ul id="changelog"></ul>
+  <p class="srcs">Data: <a href="data.json">data.json</a> · <a href="data.csv">data.csv</a> · <a href="https://github.com/sorendayton/house-freshman-tracker">source and field definitions on GitHub</a>. Link to a member with the <span style="font-family:var(--mono)">#</span> next to their name.</p>
+</section>
 </div>
 
 <script src="data.js"></script>
 <script>
 (function(){
   const data=window.FRESHMEN;
+  document.getElementById('changelog').innerHTML=(window.CHANGELOG||[]).map(u=>'<li><time datetime="'+u.d+'">'+u.d+'</time>'+esc(u.t)+'</li>').join('')||'<li>No updates logged.</li>';
   const slug=n=>n.replace(/ /g,'_');
   const stClass=s=>/^Called/.test(s)?(/delegate/.test(s)?'st-del':'st-called'):/leads/.test(s)?'st-leads':/trails/.test(s)?'st-trails':/Runoff/.test(s)?'st-runoff':'st-del';
   const stKey=s=>/^Called/.test(s)?'called':/leads/.test(s)?'leads':/trails/.test(s)?'trails':/Runoff/.test(s)?'runoff':'other';
@@ -285,15 +303,25 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
   }
   const tbody=document.getElementById('tbody');
   const opened=new Set();
+  // Stable per-member anchor: district + last name, e.g. #tx-18-menefee. Shareable and visible in Search Console.
+  const aid=r=>(r.d+'-'+r.n.replace(/,.*$/,'').replace(/\s+(Jr|Sr|II|III|IV)\.?$/i,'').trim().split(' ').slice(-1)[0]).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const setHash=id=>{try{history.replaceState(null,'',id?'#'+id:location.pathname+location.search);}catch(e){}};
   function render(){
     const rows=sorted(filtered());
     tbody.innerHTML='';
     rows.forEach(r=>{
-      const tr=document.createElement('tr'); tr.className='row'+(opened.has(r.d+r.n)?' open':''); tr.tabIndex=0;
-      tr.innerHTML='<td class="dist">'+esc(r.d)+'</td><td class="name">'+esc(r.n)+(/returning/i.test(r.seat)?'<span class="ret">returning former member</span>':'')+(/delegate/i.test(r.st)?'<span class="ret">nonvoting delegate</span>':'')+'</td>'+
+      const id=aid(r);
+      const tr=document.createElement('tr'); tr.className='row'+(opened.has(r.d+r.n)?' open':''); tr.tabIndex=0; tr.id=id;
+      tr.innerHTML='<td class="dist">'+esc(r.d)+'</td><td class="name">'+esc(r.n)+'<a class="anchor" href="#'+id+'" title="Link to this member">#</a>'+(/returning/i.test(r.seat)?'<span class="ret">returning former member</span>':'')+(/delegate/i.test(r.st)?'<span class="ret">nonvoting delegate</span>':'')+'</td>'+
         '<td><span class="pill '+r.p+'">'+r.p+'</span></td><td><span class="pill '+stClass(r.st)+'">'+esc(r.st)+'</span></td><td>'+esc(r.seat)+'</td><td class="leg">'+legCell(r)+'</td><td class="cau">'+cauCell(r)+'</td>';
       const dt=document.createElement('tr'); dt.className='detail'; dt.hidden=!opened.has(r.d+r.n); dt.innerHTML='<td colspan="7">'+detail(r)+'</td>';
-      const toggle=()=>{const k=r.d+r.n; if(opened.has(k)){opened.delete(k);dt.hidden=true;tr.classList.remove('open');}else{opened.add(k);dt.hidden=false;tr.classList.add('open');}};
+      const toggle=()=>{const k=r.d+r.n; if(opened.has(k)){opened.delete(k);dt.hidden=true;tr.classList.remove('open');if(location.hash==='#'+id)setHash('');}else{opened.add(k);dt.hidden=false;tr.classList.add('open');setHash(id);}};
+      tr.querySelector('a.anchor').addEventListener('click',e=>{
+        e.preventDefault(); e.stopPropagation();
+        if(!opened.has(r.d+r.n)) toggle(); else setHash(id);
+        const url=location.href.split('#')[0]+'#'+id, a=e.currentTarget;
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(()=>{a.textContent='copied';setTimeout(()=>{a.textContent='#';},1200);}).catch(()=>{});}
+      });
       tr.addEventListener('click',e=>{if(e.target.closest('a'))return;toggle();});
       tr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
       tbody.appendChild(tr); tbody.appendChild(dt);
@@ -317,6 +345,18 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
   try{const s=localStorage.getItem('fresh-filters'); if(s){const o=JSON.parse(s); Object.keys(o).forEach(k=>{if(els[k]) els[k].value=o[k];});}}catch(e){}
   Object.values(els).forEach(e=>e.addEventListener('input',()=>{try{localStorage.setItem('fresh-filters',JSON.stringify({party:els.party.value,status:els.status.value,leg:els.leg.value,cau:els.cau.value,q:els.q.value}));}catch(err){}}));
   render();
+  // Deep links: #tx-18-menefee opens that member, clearing any filter that hides the row.
+  function goToHash(){
+    const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
+    const r=data.find(x=>aid(x)===h); if(!r) return;
+    opened.add(r.d+r.n);
+    if(!filtered().includes(r)){Object.values(els).forEach(e=>e.value='');}
+    render();
+    const tr=document.getElementById(h); if(!tr) return;
+    tr.scrollIntoView({block:'start'}); tr.classList.add('flash'); setTimeout(()=>tr.classList.remove('flash'),2500);
+  }
+  window.addEventListener('hashchange',goToHash);
+  goToHash();
 })();
 </script>
 

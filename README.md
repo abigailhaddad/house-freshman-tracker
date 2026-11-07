@@ -12,6 +12,10 @@ Substack: Prototyping Politics
 
 Corrections, additions, and sources are welcome by email or as a GitHub issue on this repository.
 
+## Linking to a member
+
+Every row has a stable anchor of the form `#state-district-lastname` (lowercase, accents and suffixes dropped), e.g. `https://sorendayton.github.io/house-freshman-tracker/#tx-30-haynes`. Opening such a link expands that member's detail row. The `anchor` column in `data.csv` lists them all.
+
 ## Disclaimer
 
 This is an evolving work product built from open-source research (Ballotpedia, Wikipedia, press reports, caucus-PAC endorsement lists). Nothing has been validated against primary records; caucus memberships are predictions. Use it as a starting point, not a citation.
@@ -23,9 +27,11 @@ This is an evolving work product built from open-source research (Ballotpedia, W
 | `index.html` | The page. Loads `data.js` at runtime; no build step. |
 | `data.js` | The dataset as a JavaScript array (`window.FRESHMEN`). This is what the page reads. |
 | `data.json` | The same dataset as JSON, with a `meta` block (status date, row count). For spreadsheets and scripts. |
+| `data.csv` | Flat export of the same dataset for spreadsheets: one row per member, caucus predictions as `Name (H/M/L)`, and a per-member link in the `anchor` column. |
 | `og.png` | 1200×630 preview image used for link cards on X, LinkedIn, Slack, and iMessage. |
+| `favicon.svg`, `apple-touch-icon.png` | Site icons. |
 
-`data.js` and `data.json` are generated from the same source and are always in sync. To update, replace both and `index.html` if the page changed.
+`data.js` is the source; `data.json` and `data.csv` are generated from it and are always in sync. `data.json` also carries a `changelog` array, which the page renders as its Updates section. To update, replace all three and `index.html` if the page changed.
 
 ## Fields (one record per member-elect or uncalled contender)
 

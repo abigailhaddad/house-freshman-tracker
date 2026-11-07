@@ -4,9 +4,24 @@
   "status_as_of": "2026-11-07",
   "maintainer": "Soren Dayton, Foundation for American Innovation",
   "contact": "soren@thefai.org",
+  "url": "https://sorendayton.github.io/house-freshman-tracker/",
   "disclaimer": "Evolving work product built from open-source research; not validated against primary records. Caucus memberships are predictions.",
   "row_count": 121
  },
+ "changelog": [
+  {
+   "d": "2026-11-07",
+   "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. MN-1: Finstad requested a recount; Jake Johnson leads by 323 votes. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv."
+  },
+  {
+   "d": "2026-11-06",
+   "t": "Added Republican Governance Group as a guess-only (Low) tag on 14 Republicans, with FEC context on the group's 2026 giving. Added leadership-role flags (chamber leadership, committee chair, vice chair/subcommittee) for prior legislative service. Converted method section to bullets. Published to GitHub Pages with data.js and data.json."
+  },
+  {
+   "d": "2026-11-06",
+   "t": "Initial release: every open or flipped House seat and the two open delegate seats, with called winners, leaders and trailers in uncalled races, and the Louisiana runoffs; prior legislative service, committee assignments, and predicted ideological and identity caucus memberships."
+  }
+ ],
  "members": [
   {
    "d": "AL-1",
