@@ -11,6 +11,10 @@
  "changelog": [
   {
    "d": "2026-11-07",
+   "t": "Republican Governance Group guesses cut from 14 to 1 after an audit. The original tags leaned on Main Street PAC endorsements, which in 2026 also went to movement-right candidates in safe seats (an AFPI general counsel, America PAC's chief counsel, a Bongino Show producer). RG2 members mostly come from seats where a moderate brand pays; only FL-7 (R+5) clears that bar."
+  },
+  {
+   "d": "2026-11-07",
    "t": "Races called: Mark Lamb (AZ-5, R), Anthony Constantino (NY-21, R), Victoria Broderick (TN-4, D). Dan Green (FL-9) and Colby Watson (NC-8) removed after their races were called against them. Margins refreshed for all twelve uncalled rows from state election boards and local reporting, and each uncalled or runoff row now links to the official state results page: recounts pending or requested in MN-1, FL-27 and SC-2; NC-3, NC-5 and NC-7 inside recount range ahead of the 11/13 canvass; FL-7 a hair outside; CA-4, CO-4, AZ-2 and WA-5 still counting. Added Open Graph, Search Console, Dataset metadata, per-member links, and data.csv. Every row now links to its Ballotpedia race page. Member links are now taken from each race's own candidate listing instead of being built from the name; that fixed 51 of 242 links that were broken: 22 on Ballotpedia (13 disambiguation pages, 9 missing) and 29 on Wikipedia (10 pointed at a different person of the same name, 15 at disambiguation pages, 4 at nothing useful). Six members have no Wikipedia article, so that link is omitted for them."
   },
   {
@@ -588,7 +592,7 @@
     {
      "c": "Republican Governance Group",
      "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
+     "why": "Guess, and the only RG2 tag in the class. FL-7 is R+5 (Cook PVI), the most competitive seat any Republican freshman holds, and Elijah is on track to win it by about half a point in a Democratic year, so a moderate governing brand has electoral value. He is Main Street-endorsed and replaced Cory Mills, who lost renomination. RG2 publishes no membership list; nothing here is evidence of contact with the group."
     }
    ],
    "ident": [],
@@ -770,11 +774,6 @@
      "c": "Republican Study Committee",
      "lvl": "M",
      "why": "Default; establishment lineage"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -805,11 +804,6 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Leadership-aligned profile"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -1129,11 +1123,6 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Chamber-of-commerce profile"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2230,11 +2219,6 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Business profile"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2480,11 +2464,6 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Johnson chaired Main Street; establishment successor"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2536,11 +2515,6 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Governing-conservative profile"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2596,11 +2570,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2654,11 +2623,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2717,11 +2681,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2780,11 +2739,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -2813,11 +2767,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -3124,11 +3073,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
@@ -3234,11 +3178,6 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
-    },
-    {
-     "c": "Republican Governance Group",
-     "lvl": "L",
-     "why": "Guess. RG2 publishes no endorsement or membership list and its PAC gave only to incumbents in 2026; this tag reflects Main Street overlap and profile, nothing more."
     }
    ],
    "ident": [],
