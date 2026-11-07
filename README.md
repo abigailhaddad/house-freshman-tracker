@@ -23,6 +23,7 @@ This is an evolving work product built from open-source research (Ballotpedia, W
 | `index.html` | The page. Loads `data.js` at runtime; no build step. |
 | `data.js` | The dataset as a JavaScript array (`window.FRESHMEN`). This is what the page reads. |
 | `data.json` | The same dataset as JSON, with a `meta` block (status date, row count). For spreadsheets and scripts. |
+| `og.png` | 1200×630 preview image used for link cards on X, LinkedIn, Slack, and iMessage. |
 
 `data.js` and `data.json` are generated from the same source and are always in sync. To update, replace both and `index.html` if the page changed.
 
