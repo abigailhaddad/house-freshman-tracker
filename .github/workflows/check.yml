@@ -1,0 +1,54 @@
+name: Check tracker
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */3 * * *" # delete these two lines once the races settle
+
+concurrency:
+  group: check-tracker
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml
+      - name: Check data.js against itself and its sources
+        id: check
+        continue-on-error: true
+        shell: bash
+        run: python3 scripts/check.py 2>&1 | tee "$RUNNER_TEMP/report.md"; test "${PIPESTATUS[0]}" -eq 0
+      # Pull requests only get the pass/fail mark; the issue tracks main.
+      - name: Open, update or close the issue
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.check.outcome }}
+        shell: bash
+        run: |
+          title=$(python3 -c 'import yaml; print(yaml.safe_load(open("checks.yaml"))["issue_title"])')
+          number=$(gh issue list --state open --json number,title --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [ "$OUTCOME" = "success" ]; then
+            if [ -n "$number" ]; then gh issue close "$number" --comment "Fixed: the last check found nothing."; fi
+            exit 0
+          fi
+          if [ -z "$number" ]; then
+            gh issue create --title "$title" --body-file "$RUNNER_TEMP/report.md"
+            exit 0
+          fi
+          # Comment only when the report has changed since the last one. Line 1 is the timestamp.
+          last=$(gh issue view "$number" --json body,comments --jq 'if (.comments | length) > 0 then .comments[-1].body else .body end')
+          if [ "$(sed 1d "$RUNNER_TEMP/report.md")" != "$(printf '%s\n' "$last" | sed 1d)" ]; then
+            gh issue comment "$number" --body-file "$RUNNER_TEMP/report.md"
+          fi
+      # Scheduled runs report through the issue only, so they don't also send failure emails.
+      - name: Mark the run failed
+        if: steps.check.outcome != 'success' && github.event_name != 'schedule'
+        run: exit 1
