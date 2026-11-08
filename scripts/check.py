@@ -3,7 +3,8 @@
     python3 scripts/check.py            # everything
     python3 scripts/check.py --offline  # only the file checks, no downloads
 
-Prints what differs and exits 1 if anything does. It never edits data.js.
+Prints what differs. Exits 2 if the data files themselves have problems, 3 if only
+the sources differ or couldn't be read, 0 if nothing does. (1 means the script crashed.) It never edits data.js.
 Needs Python 3 with PyYAML, and Node to read data.js.
 """
 import csv
@@ -32,7 +33,8 @@ def load_data():
         capture_output=True, text=True,
     )
     if output.returncode != 0:
-        raise SystemExit(f"data.js could not be read, so the page is probably broken too:\n{output.stderr.strip()}")
+        print(f"**data.js could not be read, so the page is probably broken too.**\n\n{output.stderr.strip()}")
+        sys.exit(2)
     return json.loads(output.stdout)
 
 
@@ -329,7 +331,7 @@ def main():
         lines += ["**Sources that couldn't be read** (nothing was checked against these)", ""] + [f"- {u}" for u in unreadable] + [""]
     if file_problems or differences or unreadable:
         print("\n".join(lines).strip())
-        sys.exit(1)
+        sys.exit(2 if file_problems else 3)
     print("No problems found." if offline else f"No problems found. Results as of {as_of}.")
 
 
