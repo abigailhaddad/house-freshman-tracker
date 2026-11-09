@@ -6,9 +6,13 @@
   "contact": "soren@thefai.org",
   "url": "https://sorendayton.github.io/house-freshman-tracker/",
   "disclaimer": "Evolving work product built from open-source research; not validated against primary records. Caucus memberships are predictions.",
-  "row_count": 121
+  "row_count": 123
  },
  "changelog": [
+  {
+   "d": "2026-11-08",
+   "t": "Added two Democratic challengers the original sweep missed because their uncalled races had incumbent leaders: Tessa Lynn Hodge (CA-23, trails Obernolte by 2.8 pts) and Nicole Locklin (FL-26, trails Díaz-Balart by 0.7 pts). Both fall inside the page's 3-point rule for trailers. A full check of every uncalled race found no other omissions."
+  },
   {
    "d": "2026-11-08",
    "t": "RG2 corrected against its public member list (47 members, on the group's PAC site), which the earlier method section wrongly said did not exist. Yesterday's audit over-corrected: about a third of listed members hold R+10 or redder seats and half hold R+7 or redder, many of them appropriators, so a competitive seat is one route into RG2, not the only one. Tags now go to freshmen with a specific route (a competitive seat, succeeding a listed member, or an Appropriations or Agriculture background) and no record pointing the other way: Elijah, Kingston, McKinney, Gaines, Sell and Hatcher. Steinmann, Gober and Alfonso stay untagged."
@@ -309,6 +313,35 @@
     "Congressional Hispanic Caucus"
    ],
    "note": "Beat Assemblymember Jasmeet Bains in the top-two; a progressive in a Central Valley swing seat."
+  },
+  {
+   "d": "CA-23",
+   "race": "California's_23rd_Congressional_District_election,_2026",
+   "bp": "Tessa_Lynn_Hodge",
+   "wp": null,
+   "res": {
+    "label": "California Secretary of State",
+    "url": "https://electionresults.sos.ca.gov/returns/us-rep/district/23"
+   },
+   "n": "Tessa Lynn Hodge",
+   "p": "D",
+   "st": "Uncalled — trails",
+   "seat": "Challenging incumbent Jay Obernolte (R)",
+   "pred": "Jay Obernolte (R)",
+   "leg": "",
+   "comm": "",
+   "other": "Clinical social worker and mental-health provider; grew up in the district",
+   "cau": [
+    {
+     "c": "Congressional Progressive Caucus",
+     "lvl": "L",
+     "why": "Inference from platform (opposes the California City immigration-detention facility; path to citizenship); no CPC PAC or Justice Democrats endorsement found"
+    }
+   ],
+   "ident": [
+    "Congressional Equality Caucus (reported: identifies as bisexual)"
+   ],
+   "note": "Trails Obernolte 48.6–51.4 (92,701–98,135, −5,434; 2.8 pts) per the California Secretary of State, 11/08 4:21 p.m.; California counts mail ballots for weeks and certifies by 12/11. Obernolte is a listed RG2 member. Not called."
   },
   {
    "d": "CA-26",
@@ -730,6 +763,27 @@
     "Congressional Black Caucus"
    ],
    "note": ""
+  },
+  {
+   "d": "FL-26",
+   "race": "Florida's_26th_Congressional_District_election,_2026",
+   "bp": "Nicole_Locklin",
+   "wp": null,
+   "res": {
+    "label": "Florida Division of Elections",
+    "url": "https://floridaelectionwatch.gov/FederalOffices/USRepresentative"
+   },
+   "n": "Nicole Locklin",
+   "p": "D",
+   "st": "Uncalled — trails",
+   "seat": "Challenging incumbent Mario Díaz-Balart (R)",
+   "pred": "Mario Díaz-Balart (R)",
+   "leg": "",
+   "comm": "",
+   "other": "Attorney (10+ years; compliance and risk in health care, technology and manufacturing; data and AI work); University of Oklahoma, Santa Clara Law",
+   "cau": [],
+   "ident": [],
+   "note": "Trails Díaz-Balart 49.1–49.9 (112,874–114,578, −1,704; 0.74 pts) per Ballotpedia, 11/08; outside Florida's 0.5% machine-recount threshold unless late ballots narrow it. Runs as an \"anti-corruption Democrat\" taking no corporate PAC money; opposes the Cuba embargo, unusual in a Miami-Dade seat. Díaz-Balart is a senior appropriator and a listed RG2 member. Not called."
   },
   {
    "d": "FL-27",
