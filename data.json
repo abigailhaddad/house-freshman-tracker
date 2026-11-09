@@ -10,6 +10,10 @@
  },
  "changelog": [
   {
+   "d": "2026-11-08",
+   "t": "RG2 corrected against its public member list (47 members, on the group's PAC site), which the earlier method section wrongly said did not exist. Yesterday's audit over-corrected: about a third of listed members hold R+10 or redder seats and half hold R+7 or redder, many of them appropriators, so a competitive seat is one route into RG2, not the only one. Tags now go to freshmen with a specific route (a competitive seat, succeeding a listed member, or an Appropriations or Agriculture background) and no record pointing the other way: Elijah, Kingston, McKinney, Gaines, Sell and Hatcher. Steinmann, Gober and Alfonso stay untagged."
+  },
+  {
    "d": "2026-11-07",
    "t": "Republican Governance Group guesses cut from 14 to 1 after an audit. The original tags leaned on Main Street PAC endorsements, which in 2026 also went to movement-right candidates in safe seats (an AFPI general counsel, America PAC's chief counsel, a Bongino Show producer). RG2 members mostly come from seats where a moderate brand pays; only FL-7 (R+5) clears that bar."
   },
@@ -592,7 +596,7 @@
     {
      "c": "Republican Governance Group",
      "lvl": "L",
-     "why": "Guess, and the only RG2 tag in the class. FL-7 is R+5 (Cook PVI), the most competitive seat any Republican freshman holds, and Elijah is on track to win it by about half a point in a Democratic year, so a moderate governing brand has electoral value. He is Main Street-endorsed and replaced Cory Mills, who lost renomination. RG2 publishes no membership list; nothing here is evidence of contact with the group."
+     "why": "Guess. Competitive seat: FL-7 is R+5 (Cook PVI), the closest seat held by any Republican freshman, and Elijah leads by about half a point in a Democratic year, so a governing-moderate brand has electoral value. Main Street-endorsed; replaced Cory Mills, who lost renomination. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -774,6 +778,11 @@
      "c": "Republican Study Committee",
      "lvl": "M",
      "why": "Default; establishment lineage"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Succeeds Buddy Carter, a listed RG2 member; establishment lineage (son of former appropriator Jack Kingston); nothing in the record points toward the Freedom Caucus. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -804,6 +813,11 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Leadership-aligned profile"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Appropriations pathway: vice chair of the Georgia House Appropriations Committee. RG2's roster is heavy with appropriators (Womack, Díaz-Balart, Joyce, Calvert, Amodei). Trump and Speaker Johnson endorsed him, which marks him as leadership-aligned rather than movement-right. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -2515,6 +2529,11 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Governing-conservative profile"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Agriculture pathway (state agriculture commissioner) and an anti-Freedom Caucus primary: he unseated Andy Ogles. Weakest of the six; watch his committee assignment. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -2739,6 +2758,11 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Agriculture pathway: former deputy staff director of the House Agriculture Committee, whose chairman (Glenn Thompson) is a listed RG2 member; an institutionalist profile in a very safe seat. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -3073,6 +3097,11 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Succeeds Dan Newhouse, a listed RG2 member; Main Street-endorsed county commissioner with nothing in the record pointing toward the Freedom Caucus. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
