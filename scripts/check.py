@@ -286,9 +286,13 @@ def check_endorsements(members, source, names):
         if tag is None or order.index(tag["lvl"]) > order.index(source["level"]):
             have = f"tagged {tag['lvl']}" if tag else "not tagged"
             found.append((row["d"], "endorsement", f"{row['d']} {row['n']}: endorsed by {source['source']} ({where}), but {have} for {source['caucus']}; your key says that's {source['level']}."))
+    # Only tags at the level this endorsement supports rely on it. A lower tag
+    # that names the source is saying it didn't endorse ("no CPC PAC endorsement found").
     for row in members:
         for tag in row["cau"]:
             if tag["c"] != source["caucus"] or source["source"] not in tag["why"] or "endors" not in tag["why"]:
+                continue
+            if order.index(tag["lvl"]) > order.index(source["level"]):
                 continue
             if not any(same_person(row["n"], e["name"]) for e in names):
                 found.append((row["d"], "endorsement", f"{row['d']} {row['n']}: the {source['caucus']} tag says {source['source']} endorsed, but the name isn't on its list now ({where})."))
