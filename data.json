@@ -6,9 +6,17 @@
   "contact": "soren@thefai.org",
   "url": "https://sorendayton.github.io/house-freshman-tracker/",
   "disclaimer": "Evolving work product built from open-source research; not validated against primary records. Caucus memberships are predictions.",
-  "row_count": 121
+  "row_count": 123
  },
  "changelog": [
+  {
+   "d": "2026-11-08",
+   "t": "Added two Democratic challengers the original sweep missed because their uncalled races had incumbent leaders: Tessa Lynn Hodge (CA-23, trails Obernolte by 2.8 pts) and Nicole Locklin (FL-26, trails Díaz-Balart by 0.7 pts). Both fall inside the page's 3-point rule for trailers. A full check of every uncalled race found no other omissions."
+  },
+  {
+   "d": "2026-11-08",
+   "t": "RG2 corrected against its public member list (47 members, on the group's PAC site), which the earlier method section wrongly said did not exist. Yesterday's audit over-corrected: about a third of listed members hold R+10 or redder seats and half hold R+7 or redder, many of them appropriators, so a competitive seat is one route into RG2, not the only one. Tags now go to freshmen with a specific route (a competitive seat, succeeding a listed member, or an Appropriations or Agriculture background) and no record pointing the other way: Elijah, Kingston, McKinney, Gaines, Sell and Hatcher. Steinmann, Gober and Alfonso stay untagged."
+  },
   {
    "d": "2026-11-07",
    "t": "Republican Governance Group guesses cut from 14 to 1 after an audit. The original tags leaned on Main Street PAC endorsements, which in 2026 also went to movement-right candidates in safe seats (an AFPI general counsel, America PAC's chief counsel, a Bongino Show producer). RG2 members mostly come from seats where a moderate brand pays; only FL-7 (R+5) clears that bar."
@@ -314,6 +322,35 @@
    "note": "Beat Assemblymember Jasmeet Bains in the top-two; a progressive in a Central Valley swing seat."
   },
   {
+   "d": "CA-23",
+   "race": "California's_23rd_Congressional_District_election,_2026",
+   "bp": "Tessa_Lynn_Hodge",
+   "wp": null,
+   "res": {
+    "label": "California Secretary of State",
+    "url": "https://electionresults.sos.ca.gov/returns/us-rep/district/23"
+   },
+   "n": "Tessa Lynn Hodge",
+   "p": "D",
+   "st": "Uncalled — trails",
+   "seat": "Challenging incumbent Jay Obernolte (R)",
+   "pred": "Jay Obernolte (R)",
+   "leg": "",
+   "comm": "",
+   "other": "Clinical social worker and mental-health provider; grew up in the district",
+   "cau": [
+    {
+     "c": "Congressional Progressive Caucus",
+     "lvl": "L",
+     "why": "Inference from platform (opposes the California City immigration-detention facility; path to citizenship); no CPC PAC or Justice Democrats endorsement found"
+    }
+   ],
+   "ident": [
+    "Congressional Equality Caucus (reported: identifies as bisexual)"
+   ],
+   "note": "Trails Obernolte 48.6–51.4 (92,701–98,135, −5,434; 2.8 pts) per the California Secretary of State, 11/08 4:21 p.m.; California counts mail ballots for weeks and certifies by 12/11. Obernolte is a listed RG2 member. Not called."
+  },
+  {
    "d": "CA-26",
    "race": "California's_26th_Congressional_District_election,_2026",
    "bp": "Jacqui_Irwin",
@@ -599,7 +636,7 @@
     {
      "c": "Republican Governance Group",
      "lvl": "L",
-     "why": "Guess, and the only RG2 tag in the class. FL-7 is R+5 (Cook PVI), the most competitive seat any Republican freshman holds, and Elijah is on track to win it by about half a point in a Democratic year, so a moderate governing brand has electoral value. He is Main Street-endorsed and replaced Cory Mills, who lost renomination. RG2 publishes no membership list; nothing here is evidence of contact with the group."
+     "why": "Guess. Competitive seat: FL-7 is R+5 (Cook PVI), the closest seat held by any Republican freshman, and Elijah leads by about half a point in a Democratic year, so a governing-moderate brand has electoral value. Main Street-endorsed; replaced Cory Mills, who lost renomination. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -735,6 +772,27 @@
    "note": ""
   },
   {
+   "d": "FL-26",
+   "race": "Florida's_26th_Congressional_District_election,_2026",
+   "bp": "Nicole_Locklin",
+   "wp": null,
+   "res": {
+    "label": "Florida Division of Elections",
+    "url": "https://floridaelectionwatch.gov/FederalOffices/USRepresentative"
+   },
+   "n": "Nicole Locklin",
+   "p": "D",
+   "st": "Uncalled — trails",
+   "seat": "Challenging incumbent Mario Díaz-Balart (R)",
+   "pred": "Mario Díaz-Balart (R)",
+   "leg": "",
+   "comm": "",
+   "other": "Attorney (10+ years; compliance and risk in health care, technology and manufacturing; data and AI work); University of Oklahoma, Santa Clara Law",
+   "cau": [],
+   "ident": [],
+   "note": "Trails Díaz-Balart 49.1–49.9 (112,874–114,578, −1,704; 0.74 pts) per Ballotpedia, 11/08; outside Florida's 0.5% machine-recount threshold unless late ballots narrow it. Runs as an \"anti-corruption Democrat\" taking no corporate PAC money; opposes the Cuba embargo, unusual in a Miami-Dade seat. Díaz-Balart is a senior appropriator and a listed RG2 member. Not called."
+  },
+  {
    "d": "FL-27",
    "race": "Florida's_27th_Congressional_District_election,_2026",
    "bp": "Eliott_Rodriguez",
@@ -781,6 +839,11 @@
      "c": "Republican Study Committee",
      "lvl": "M",
      "why": "Default; establishment lineage"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Succeeds Buddy Carter, a listed RG2 member; establishment lineage (son of former appropriator Jack Kingston); nothing in the record points toward the Freedom Caucus. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -811,6 +874,11 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Leadership-aligned profile"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Appropriations pathway: vice chair of the Georgia House Appropriations Committee. RG2's roster is heavy with appropriators (Womack, Díaz-Balart, Joyce, Calvert, Amodei). Trump and Speaker Johnson endorsed him, which marks him as leadership-aligned rather than movement-right. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -2557,6 +2625,11 @@
      "c": "Main Street Caucus",
      "lvl": "M",
      "why": "Governing-conservative profile"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Agriculture pathway (state agriculture commissioner) and an anti-Freedom Caucus primary: he unseated Andy Ogles. Weakest of the six; watch his committee assignment. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -2781,6 +2854,11 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Agriculture pathway: former deputy staff director of the House Agriculture Committee, whose chairman (Glenn Thompson) is a listed RG2 member; an institutionalist profile in a very safe seat. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
@@ -3122,6 +3200,11 @@
      "c": "Republican Study Committee",
      "lvl": "H",
      "why": "Default"
+    },
+    {
+     "c": "Republican Governance Group",
+     "lvl": "L",
+     "why": "Guess. Succeeds Dan Newhouse, a listed RG2 member; Main Street-endorsed county commissioner with nothing in the record pointing toward the Freedom Caucus. RG2's PAC site lists 47 members; the group publishes no endorsements, and nothing here is evidence of contact with it."
     }
    ],
    "ident": [],
