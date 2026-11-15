@@ -9,6 +9,8 @@ required_fields: [d, n, p, st, seat, pred, leg, comm, other, cau, ident, note]
 district_pattern: '^[A-Z]{2}-(\d+|AL)$'
 parties: [D, R]
 statuses: ["Called", "Called (D-on-D)", "Called (delegate)", "Uncalled — leads", "Uncalled — trails"]
+# Also allowed: "Called (...)" with a note on who called it, e.g. "Called (CNN projection; AP pending)".
+status_patterns: ['^Called \(.+\)$']
 # Which of those the race-results check expects.
 called_prefix: "Called"
 delegate_called: "Called (delegate)"
@@ -16,7 +18,10 @@ leads: "Uncalled — leads"
 trails: "Uncalled — trails"
 # Runoff rows are checked by hand; any status starting with this is allowed.
 runoff_status_prefix: "Runoff"
-levels: [H, M, L]
+# Highest first. C (Confirmed) is a membership the caucus or member has announced;
+# a C tag may carry "was", the level it was predicted at (I = inferred from background).
+levels: [C, H, M, L]
+was_levels: [H, M, L, I]
 tiers: [1, 2, 3]
 
 # Race results. NBC's page carries every House race as JSON.

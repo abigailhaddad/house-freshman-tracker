@@ -28,9 +28,10 @@ jobs:
           python3 scripts/check.py > "$RUNNER_TEMP/report.md" 2>&1
           echo "code=$?" >> "$GITHUB_OUTPUT"
           cat "$RUNNER_TEMP/report.md"
-      # Pull requests only get the pass/fail mark; the issue tracks main.
+      # The issue tracks main. Pull requests and manual runs on other branches
+      # only get the pass/fail mark.
       - name: Open, update or close the issue
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
           CODE: ${{ steps.check.outputs.code }}

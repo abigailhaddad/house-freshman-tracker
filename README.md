@@ -70,4 +70,4 @@ Election results: Wikipedia's 2026 House elections results tables; Ballotpedia; 
 - delegate races that differ from Wikipedia's results table
 - PAC endorsements that the tags don't reflect, and H tags citing an endorsement that isn't on the PAC's list
 
-It never edits anything. Run it with `python3 scripts/check.py` (needs PyYAML and Node), or `--offline` to skip the downloads. A GitHub Action runs it on every push and every three hours, and keeps one issue open listing whatever differs; the issue closes itself when nothing does. Source URLs, page markers and allowed values are in `checks.yaml`. To stop reporting a difference you've decided to keep, add it to `known_differences` there.
+It never edits anything. Run it with `python3 scripts/check.py` (needs PyYAML and Node), or `--offline` to skip the downloads. A GitHub Action runs it on every push to main and every three hours, and keeps one issue open listing whatever differs; the issue closes itself when nothing does. Source URLs, page markers and allowed values are in `checks.yaml`. To stop reporting a difference you've decided to keep, add it to `known_differences` there.
