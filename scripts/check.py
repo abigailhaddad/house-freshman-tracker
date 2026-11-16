@@ -79,15 +79,21 @@ def check_rows(members):
             problems.append(f"{label}: district {row['d']!r} isn't in the form TX-32 or WY-AL.")
         if row["p"] not in CONFIG["parties"]:
             problems.append(f"{label}: party {row['p']!r} isn't one of {', '.join(CONFIG['parties'])}.")
-        if row["st"] not in CONFIG["statuses"] and not row["st"].startswith(CONFIG["runoff_status_prefix"]):
+        if (
+            row["st"] not in CONFIG["statuses"]
+            and not row["st"].startswith(CONFIG["runoff_status_prefix"])
+            and not any(re.match(p, row["st"]) for p in CONFIG["status_patterns"])
+        ):
             problems.append(f"{label}: status {row['st']!r} isn't one of the statuses the README lists.")
         if "lt" in row and row["lt"] not in CONFIG["tiers"]:
             problems.append(f"{label}: leadership tier {row['lt']!r} isn't 1, 2 or 3.")
         if ("lt" in row) != bool(row.get("lead")):
             problems.append(f"{label}: has a leadership tier without a role, or a role without a tier.")
         for tag in row["cau"]:
-            if set(tag) != {"c", "lvl", "why"} or tag["lvl"] not in CONFIG["levels"]:
-                problems.append(f"{label}: caucus entry {tag} needs c, lvl (H, M or L) and why.")
+            if set(tag) - {"was"} != {"c", "lvl", "why"} or tag["lvl"] not in CONFIG["levels"]:
+                problems.append(f"{label}: caucus entry {tag} needs c, lvl ({', '.join(CONFIG['levels'])}) and why.")
+            elif "was" in tag and (tag["lvl"] != "C" or tag["was"] not in CONFIG["was_levels"]):
+                problems.append(f"{label}: caucus entry {tag} has 'was', which only C tags may carry, and it must be one of {', '.join(CONFIG['was_levels'])}.")
         key = (row["d"], surname(row["n"]))
         if key in seen:
             problems.append(f"{label} appears twice.")
@@ -286,9 +292,13 @@ def check_endorsements(members, source, names):
         if tag is None or order.index(tag["lvl"]) > order.index(source["level"]):
             have = f"tagged {tag['lvl']}" if tag else "not tagged"
             found.append((row["d"], "endorsement", f"{row['d']} {row['n']}: endorsed by {source['source']} ({where}), but {have} for {source['caucus']}; your key says that's {source['level']}."))
+    # Only tags at the level this endorsement supports rely on it. A lower tag
+    # that names the source is saying it didn't endorse ("no CPC PAC endorsement found").
     for row in members:
         for tag in row["cau"]:
             if tag["c"] != source["caucus"] or source["source"] not in tag["why"] or "endors" not in tag["why"]:
+                continue
+            if order.index(tag["lvl"]) > order.index(source["level"]):
                 continue
             if not any(same_person(row["n"], e["name"]) for e in names):
                 found.append((row["d"], "endorsement", f"{row['d']} {row['n']}: the {source['caucus']} tag says {source['source']} endorsed, but the name isn't on its list now ({where})."))

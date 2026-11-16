@@ -123,6 +123,8 @@ tr.row{cursor:pointer}
 tr.row:hover td{background:color-mix(in srgb,var(--panel) 85%,var(--line-soft))}
 tr.row.open td{border-bottom:none}
 td.dist{font-family:var(--mono);font-size:13px;white-space:nowrap}
+td.dist .pvi{display:block;font-size:11px;margin-top:2px;color:var(--muted)}
+td.dist .pvi.R{color:var(--rep)} td.dist .pvi.D{color:var(--dem)}
 td.name{font-weight:600;white-space:nowrap}
 td.name .ret{display:block;font-weight:400;font-size:11px;color:var(--muted)}
 td.name .anchor{margin-left:6px;color:var(--muted);text-decoration:none;font-weight:400;opacity:0;font-family:var(--mono);font-size:12px}
@@ -140,7 +142,7 @@ td.leg{max-width:260px}
 td.cau{max-width:300px}
 .cau-item{display:inline-block;margin:0 6px 3px 0;white-space:nowrap}
 .conf{font-family:var(--mono);font-size:10px;padding:0 4px;border-radius:3px;margin-left:3px;border:1px solid var(--line)}
-.conf.H{background:var(--ok-soft);color:var(--ok);border-color:transparent} .conf.M{background:var(--warn-soft);color:var(--warn);border-color:transparent} .conf.L{background:var(--line-soft);color:var(--muted);border-color:transparent}
+.conf.H{background:var(--ok-soft);color:var(--ok);border-color:transparent} .conf.M{background:var(--warn-soft);color:var(--warn);border-color:transparent} .conf.L{background:var(--line-soft);color:var(--muted);border-color:transparent} .conf.C{background:var(--ok);color:var(--panel);border-color:transparent;font-weight:600}
 tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12px 14px 14px 14px}
 .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 24px}
 .dgrid>div{min-width:0}
@@ -152,6 +154,7 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
 .srcs a:hover{border-bottom-color:var(--accent)}
 .method{margin-top:22px;background:var(--panel);border:1px solid var(--line-soft);border-radius:6px;padding:14px 16px;max-width:none}
 .method h2{font-family:var(--display);font-size:18px;font-weight:600;margin:0 0 6px}
+.method h3{font-family:var(--display);font-size:15px;font-weight:600;margin:16px 0 4px}
 .method p,.method li{max-width:78ch;color:var(--fg)}
 .method p{margin:6px 0}
 .method ul{margin:6px 0 10px;padding-left:20px}
@@ -169,10 +172,10 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
 <div class="wrap">
 <header>
   <h1>120th House Freshman Tracker</h1>
-  <p class="sub">New members-elect of the U.S. House (both parties), their prior legislative service and committee assignments, and a first cut at the caucuses each is likely to join. Leadership roles in those legislatures are flagged. Click a row for detail and sources.</p>
-  <div class="stamp">Status as of <b>Saturday, 2026-11-07</b> · Election was 2026-11-03 · Louisiana runoffs 2026-12-12 · Sworn in 2027-01-03</div>
+  <p class="sub">Every new member of the House in the 120th Congress, from both parties: their state legislative records, leadership posts and committee assignments, and the caucuses each is likely to join. Click a row for details and sources.</p>
+  <div class="stamp">Status as of <b>Friday, 2026-11-13</b> · Election was 2026-11-03 · Louisiana runoffs 2026-12-12 · Sworn in 2027-01-03</div>
   <div class="byline"><b>Soren Dayton</b>, Director of American Governance Policy, Foundation for American Innovation · <span class="email">soren@thefai.org</span></div>
-  <div class="disclaimer">This is an evolving work product, not a finished reference. Everything in it comes from open-source research (Ballotpedia, Wikipedia, press reports, and caucus-PAC endorsement lists) and has not been independently validated. I do not vouch for the data. Caucus memberships are predictions; race calls and margins change daily. Corrections welcome at the address above.</div>
+  <div class="disclaimer">This is a working document, not a finished reference. It draws on public sources (Ballotpedia, Wikipedia, news reports and caucus PAC endorsement lists) that I have not checked against primary records, and I don't vouch for it. Caucus memberships are predictions. Race calls and margins change daily. Send corrections to the address above.</div>
 </header>
 
 <div class="tiles" id="tiles"></div>
@@ -181,6 +184,7 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
   <label>Party<select id="f-party"><option value="">All</option><option value="D">Democrats</option><option value="R">Republicans</option></select></label>
   <label>Status<select id="f-status"><option value="">All</option><option value="called">Called</option><option value="leads">Uncalled, leading</option><option value="trails">Uncalled, trailing</option><option value="runoff">Runoff (Dec 12)</option><option value="live">Called or leading</option></select></label>
   <label>Legislative service<select id="f-leg"><option value="">All</option><option value="state">State / territorial legislature</option><option value="house">Prior U.S. House</option><option value="any">Any legislature</option><option value="lead1">Chamber or caucus leadership</option><option value="lead">Any leadership role (incl. committee chairs)</option><option value="none">None</option></select></label>
+  <label>Seat lean (PVI)<select id="f-pvi"><option value="">All</option><option value="dem">Democratic-leaning or even</option><option value="r14">R+1 to R+4</option><option value="r59">R+5 to R+9</option><option value="r10">R+10 or redder</option><option value="rany">Any Republican lean</option></select></label>
   <label>Caucus<select id="f-cau"><option value="">All</option></select></label>
   <label>Search<input id="f-q" type="search" placeholder="name, district, state, committee, note"></label>
   <button id="f-reset" type="button">Reset</button>
@@ -203,27 +207,58 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
 <div class="empty" id="empty" hidden>No members match these filters.</div>
 </div>
 
-<div class="key"><span><span class="lead t1">Chamber leadership</span> floor leader, whip, pro tem, delegation or caucus leadership</span><span><span class="lead t2">Committee chair</span> full-committee chair or ranking member</span><span><span class="lead t3">Vice chair / subcommittee</span></span><span><span class="conf H">H</span> endorsement by the caucus's own PAC, prior membership, or self-identification</span><span><span class="conf M">M</span> inference from record, district, or allied-group endorsement</span><span><span class="conf L">L</span> guess</span></div>
+<div class="key"><span><span class="lead t1">Chamber leadership</span> floor leader, whip, president pro tem, or delegation or caucus leader</span><span><span class="lead t2">Committee chair</span> full-committee chair or ranking member</span><span><span class="lead t3">Vice chair / subcommittee</span></span><span><span class="conf C">C</span> confirmed by the caucus or the member</span><span><span class="conf H">H</span> predicted from a caucus PAC endorsement, earlier membership or the member's own statement</span><span><span class="conf M">M</span> inferred from record, district or an allied group's endorsement</span><span><span class="conf L">L</span> guess</span></div>
 
 <section class="method">
   <h2>Method and caveats</h2>
-  <p><strong>Disclaimer.</strong> Maintained by Soren Dayton (soren@thefai.org). This is an evolving product built from open-source research; nothing in it has been validated against primary records, and I do not vouch for the data. Use it as a starting point, not a citation.</p>
-  <p><strong>Who is in.</strong> Every district where the Wikipedia results table, as of the status date above, does not show the incumbent re-elected, plus the two nonvoting delegate seats that opened. That yields called winners, leaders and trailers in uncalled races, and the two Louisiana runoffs. Six returning former members (Carl, Solis, Bean, Allred, Luria, McAdams) are included and flagged; they are new to the 120th Congress but not true freshmen. Incumbents who merely changed districts (Casar, Wasserman Schultz, Kennedy, Menefee) are excluded, as is CA-40 (two incumbents). Trailers more than 3 points back (Vang CA-7, Hernandez CA-14, Hill AK-AL) are omitted, and contenders are removed once their race is called against them (so far: Dan Green FL-9, Colby Watson NC-8).</p>
-  <p><strong>Legislative service and committees.</strong> From each member's Ballotpedia page (officeholder history and "Committee assignments" section) cross-checked against Wikipedia. Committee lists show the most recent session first. Tribal and territorial legislatures count. Leadership roles come from Ballotpedia committee listings plus a verification search for each chamber-level claim (sources in the archive). Where Ballotpedia has no committee section (older service, e.g. Biss, Ojeda, McAdams's state Senate), the row says so.</p>
-  <p><strong>Caucus predictions.</strong></p>
+
+  <h3>Who is included</h3>
+  <p>The tracker covers every district where Wikipedia's results table does not show the incumbent re-elected, plus the three delegate seats that opened or changed hands (the District of Columbia, the Virgin Islands and Guam). That means called winners, the leader and the trailer in each uncalled race, and both candidates in the two Louisiana runoffs on December 12.</p>
+  <p>Six former members return after time away: Carl (R-AL), Solis (D-CA), Bean (D-IL), Allred (D-TX), Luria (D-VA) and McAdams (D-UT). They are new to this Congress but not true freshmen, and their rows say so. Incumbents who changed districts (Democrats Casar, Wasserman Schultz and Menefee, and Republican Kennedy) are left out, as is CA-40, where two Republican incumbents ran against each other.</p>
+  <p>A trailing candidate stays on the list only while within 3 points of the leader; Vang (D, CA-7), Hernandez (D, CA-14) and Hill (I, AK-AL) were further back. Candidates come off once their race is called against them. So far that is one Republican, Green (FL-9), and six Democrats: Watson (NC-8), Nez (AZ-2), Locklin (FL-26), Rodriguez (FL-27), Conroy (WA-5) and Khalifa (SC-2).</p>
+
+  <h3>Legislative service</h3>
+  <p>Prior service and committee assignments come from each member's Ballotpedia page, checked against Wikipedia. Committees are listed with the most recent session first. Tribal and territorial legislatures count. Leadership posts come from Ballotpedia's committee listings, and each chamber-level post (floor leader, whip, president pro tem, caucus chair) was confirmed with a separate search. Where Ballotpedia has no committee record, mostly for older service such as that of Democrats Biss, Ojeda and McAdams (in McAdams's case, the Utah Senate), the row says so.</p>
+
+  <h3>Seat lean</h3>
+  <p>Each district shows its Cook Partisan Voting Index as given in Wikipedia's 2026 results tables. Several states redrew their maps mid-decade, so check a figure against Cook before quoting it.</p>
+  <p>On these numbers, 211 of the 435 seats are even or lean Democratic, and Democrats won all of them. No Republican holds a seat bluer than R+4. A majority takes 218 votes, so Democrats need at least seven Republican-leaning seats to hold the House.</p>
+  <p>They have far more than seven, and most belong to freshmen. Counting leaders in uncalled races, 49 Democrats sit in Republican-leaning seats; 38 are freshmen. In seats R+5 or redder, 22 of the 26 Democrats are freshmen.</p>
+  <p>Few of those freshmen have legislative experience. Trump carried 22 of their districts by 10 points or more in 2024, and only four of the Democrats elected there have served in a state legislature (Ford, Benitez-Thompson, Ojeda and Smith). Of the other 57 Democratic freshmen, 25 have.</p>
+
+  <h3>Caucus predictions</h3>
+  <p>Ideological caucus tags rest on four kinds of evidence, strongest first: the caucus PAC's endorsement list; earlier membership; the member's own statements (DSA membership, for example); and the district and biography. The endorsement lists are the NewDem Action Fund's (50 candidates), the Blue Dog PAC's 2026 list, the Freedom Caucus Fund, Republican Main Street PAC, the Congressional Progressive Caucus PAC and Justice Democrats.</p>
+  <p>Republicans default to the Republican Study Committee unless something points elsewhere. The RSC's executive board endorsed Ben Cline (R-VA) on September 18 to chair the caucus in the 120th Congress; the members have not yet voted (<a href="https://rsc-pfluger.house.gov/media/press-releases/rsc-executive-board-unanimously-endorses-ben-cline-serve-next-rsc-chairman">RSC</a>).</p>
+  <p>Identity caucuses (the Black, Hispanic, Asian Pacific American and Native American caucuses, along with the Equality, veterans, labor and law-enforcement caucuses) are inferred from each member's background. They appear in grey, apart from the ideological tags, until a caucus names the member; the tag then moves into the main list as confirmed.</p>
+
+  <h3>Confirmed and predicted</h3>
+  <p>H, M and L are predictions. A tag becomes C, for confirmed, only when the caucus or the member says so publicly: a caucus release that names the member, the member's own statement, or the official roster after January 3. A PAC's list of the candidates it backed does not count, even when the PAC calls them "confirmed." Each confirmed tag keeps its earlier prediction, so the page can be scored against the outcome. Predictions that fail will be marked once memberships settle early next year.</p>
+  <p>Freshmen usually announce caucus memberships in December and January. So far the only confirmations come from CAPAC, which named five incoming members on November 4.</p>
+
+  <h3>What the caucuses say</h3>
+  <p>As of November 9:</p>
   <ul>
-    <li><strong>Evidence hierarchy.</strong> Ideological caucus tags are predicted from, in descending order of weight: the caucus-affiliated PAC's own endorsement list; prior membership; self-identification (for example, DSA membership); and finally district and biography.</li>
-    <li><strong>Endorsement lists used.</strong> NewDem Action Fund (50 endorsements); Blue Dog PAC's 2026 list; Freedom Caucus Fund; Republican Main Street PAC; Congressional Progressive Caucus PAC; Justice Democrats.</li>
-    <li><strong>Republican Study Committee.</strong> Treated as the default for any Republican without a contrary signal.</li>
-    <li><strong>Republican Governance Group (RG2).</strong> Publishes no endorsement list and no membership list. Its PAC (FEC C00433060) gave only to incumbents, leadership PACs and one losing primary candidate (Robert Smullen, NY-21) in the 2026 cycle, so there is no direct RGG signal for any freshman. Every RGG tag is a guess, marked Low, and should not be read as evidence of membership, recruitment, or any communication from the group.</li>
-    <li><strong>RG2 tagging rule.</strong> RG2 draws mostly from members whose seats make a moderate governing brand useful. A tag requires a competitive seat (Cook PVI R+6 or closer) and nothing in the record pointing the other way. A Main Street endorsement alone does not qualify: in 2026 the Main Street PAC also backed movement-right candidates in safe seats. Under this rule only one freshman (Elijah, FL-7) is tagged; the two others in competitive seats, Gruters (FL-16, R+6) and LePage (ME-2, R+4), have Trump-movement profiles and are not.</li>
-    <li><strong>RG2 context.</strong> Our estimate is that roughly 15 of the group's approximately 41 members who sought re-election lost, among them Valadao (chair) and Young Kim (vice chair, who lost a member-on-member race to Ken Calvert), and that another half-dozen held on by under four points. The group enters the 120th Congress badly depleted and will rebuild from survivors rather than from this freshman class.</li>
-    <li><strong>Identity and affinity caucuses.</strong> CBC, CHC, CAPAC, Native American, Equality, veterans, labor and law-enforcement caucuses are inferred from reported background and listed separately from the ideological tags.</li>
-    <li><strong>Timing.</strong> Nobody has joined anything yet. Freshmen typically announce caucus memberships in December and January.</li>
+    <li>The Blue Dog PAC says the coalition is "on track to more than double," with 22 members already confirmed, and lists the candidates it backed who won (<a href="https://bluedogdems.com/22-blue-dogs-and-counting/">Blue Dog PAC</a>; <a href="https://bluedogdems.com/the-blue-dog-outlook-for-next-congress/">outlook</a>). One of them, Johnson (D, MN-1), is in a race not yet called.</li>
+    <li>Greg Casar (D-TX), the Progressive Caucus chair, said on November 8 that the caucus would add "at least 25 new members" but did not name them (<a href="https://www.yahoo.com/news/politics/articles/house-members-top-priorities-cannot-222300636.html">report</a>; <a href="https://prospect.org/2026/11/04/progressive-caucus-wants-to-deliver-on-democratic-promises/">American Prospect</a>).</li>
+    <li>The Hispanic Caucus says "more than 50 incoming Members" will join in December, up from 44 now. Its leaders, all Democrats, are Adriano Espaillat (chair), Darren Soto (deputy chair) and Sylvia García (whip) (<a href="https://chc.house.gov/media-center/press-releases/congressional-hispanic-caucus-makes-history-more-50-incoming-members">CHC</a>).</li>
+    <li>CAPAC says at least 22 Asian American and Pacific Islander members are "poised to join" and names five incoming ones (<a href="https://capac.house.gov/press-release/capac-announces-largest-aapi-membership-history">CAPAC</a>).</li>
   </ul>
-  <p><strong>Known gaps.</strong> Bios are thin for several open-seat Republicans in Florida and Texas (Rogers, Strada, Gruters, Schwartzel, Bonck) and for Dembo (KY-6). Vote margins in uncalled races were last refreshed on 2026-11-07 from state election boards (NCSBE, CA and CO Secretaries of State, SC and WA certified or official counts) and local reporting cited in each row; none of the twelve has been called by AP. Recounts are requested or automatic in MN-1 (Johnson +323), FL-27 (Rodriguez −1,100) and SC-2 (Khalifa −0.99 pts); NC-5 (Hubbard +99), NC-3 (Smith −233) and NC-7 (Hardy −0.76 pts) are inside North Carolina's 1% threshold ahead of the 11/13 canvass; FL-7 (Elijah +0.505 pts) sits just outside Florida's. CA-4, CO-4, AZ-2 and WA-5 are still counting.</p>
-  <p><strong>Per-member links.</strong> Each detail row links to the race on Ballotpedia and to the member on Ballotpedia and Wikipedia. Member links are taken from each race's own candidate listing, not built from the name, so they point at the right person; six members with no Wikipedia article have no Wikipedia link. Uncalled races and the Louisiana runoffs also link to the official state count, which is the number to trust over anything here.</p>
-  <p><strong>Primary sources.</strong> <span class="srcs"><a href="https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections">Wikipedia 2026 House elections</a> · <a href="https://ballotpedia.org/United_States_House_of_Representatives_elections,_2026">Ballotpedia 2026 House</a> · <a href="https://www.newdemactionfund.com/candidates">NewDem Action Fund candidates</a> · <a href="https://bluedogdems.com/news/">Blue Dog PAC</a> · <a href="https://freedomcaucusfund.com/endorsements/">Freedom Caucus Fund</a> · <a href="https://www.mainstreetrepublicanpac.com/candidates">Main Street Republican PAC</a> · <a href="https://www.fec.gov/data/committee/C00433060/">RGG/Tuesday Group PAC (FEC)</a> · <a href="https://ballotpedia.org/Endorsements_by_Congressional_Progressive_Caucus_PAC">CPC PAC (Ballotpedia)</a> · <a href="https://ballotpedia.org/Endorsements_by_Justice_Democrats_PAC">Justice Democrats (Ballotpedia)</a> · <a href="https://rollcall.com/2026/11/04/history-makers-congress-house-senate-governor/">Roll Call, history-makers</a> · <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/">CBS News results</a></span></p>
+
+  <h3>Republican Governance Group</h3>
+  <p>RG2 is a Republican caucus, and every member named in this section is a Republican unless noted. Its PAC site lists 47 House members. The list is undated (the page was last updated in June 2026) and still includes Kevin Kiley (CA), who has since left the party and ran as an independent. In the 119th Congress the group was chaired by David Valadao, with Carlos Gimenez and Young Kim as vice chairs; Roll Call put its size at 44 in January 2025.</p>
+  <p>RG2 publishes no endorsements. In the 2026 cycle its PAC (<a href="https://www.fec.gov/data/committee/C00433060/">FEC C00433060</a>) gave only to incumbents, leadership PACs and one primary candidate who lost. Nothing ties the group directly to any freshman, so every RG2 tag here is a low-confidence guess. None is evidence of membership, recruitment or contact.</p>
+  <p>The member list shows two ways in. Some members hold competitive seats (Bacon, Fitzpatrick, Lawler, Valadao). Others are appropriators and committee leaders in safe seats (Womack, Díaz-Balart, Joyce, Calvert, Glenn Thompson); a third of the members hold seats R+10 or redder. A freshman gets the tag only with one of three links to the group: a competitive seat, a predecessor on the list, or a background in appropriations or agriculture. A Freedom Caucus endorsement or a career in movement-conservative institutions rules it out. A Main Street endorsement alone is not enough.</p>
+  <p>The group took heavy losses in November. Six listed members left their seats (Amodei, Bacon, Carter, Edwards, Letlow, Newhouse), and at least 14 lost: Bresnahan, Ciscomani, Evans, Fitzpatrick, Kean, Kiggans, Lawler, Mackenzie, Miller-Meeks, Steil, Turner, Valadao, Wittman, and Kiley. Two members, Calvert and Kim, ran against each other, and Calvert won. Díaz-Balart, Salazar and Baumgartner held on in close races; Obernolte leads his. On current counts RG2 returns with 25 or 26 members, about half its former size. It will rebuild from those survivors, and this freshman class adds a handful at most.</p>
+
+  <h3>Known gaps</h3>
+  <p>Biographies are thin for several Republicans who won open seats in Florida and Texas (Rogers, Strada, Gruters, Schwartzel, Bonck) and for one Democrat, Dembo (KY-6).</p>
+  <p>Margins in uncalled races come from state election offices and the local reporting cited in each row, updated between November 10 and 13. AP has called none of the five. Three are in North Carolina, and all three fall within the state's 1 percent recount margin: Democrat Hubbard leads Republican incumbent Foxx by 335 in NC-5; Democrat Hardy trails Republican incumbent Rouzer by 0.70 points in NC-7; and Democrat Bell trails Republican incumbent Harrigan by 0.84 points in NC-10. Counties canvass on November 13, recount requests are due November 17, and the state certifies November 24.</p>
+  <p>In Minnesota, Democrat Johnson leads Republican incumbent Finstad by about 300 votes (MN-1); the state certifies on November 19, after which Finstad can ask for a recount. California is still counting mail ballots in CA-23, where Democrat Hodge trails Republican incumbent Obernolte.</p>
+  <p>Four rows show Called before AP has called them. Three are Democratic pickups: Laubacher over Boebert in CO-4, on CNN's projection; Broderick over DesJarlais in TN-4, on local reports and Wikipedia; and Smith over Murphy in NC-3, on Murphy's concession. The fourth is a race between two Democrats: Jones over incumbent Thompson in CA-4, on Decision Desk HQ's projection.</p>
+
+  <h3>Links and sources</h3>
+  <p>Each detail row links to the race on Ballotpedia and to the member on Ballotpedia and Wikipedia. Member links come from each race page's candidate list rather than from the name, so they point to the right person. Seven members have no Wikipedia article and get no link. Uncalled races and the Louisiana runoffs also link to the state's official count; trust that over anything here.</p>
+  <p>Main sources: <span class="srcs"><a href="https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections">Wikipedia 2026 House elections</a> · <a href="https://ballotpedia.org/United_States_House_of_Representatives_elections,_2026">Ballotpedia 2026 House</a> · <a href="https://www.newdemactionfund.com/candidates">NewDem Action Fund candidates</a> · <a href="https://bluedogdems.com/news/">Blue Dog PAC</a> · <a href="https://freedomcaucusfund.com/endorsements/">Freedom Caucus Fund</a> · <a href="https://www.mainstreetrepublicanpac.com/candidates">Main Street Republican PAC</a> · <a href="https://www.fec.gov/data/committee/C00433060/">RG2/Tuesday Group PAC (FEC)</a> · <a href="https://ballotpedia.org/Endorsements_by_Congressional_Progressive_Caucus_PAC">CPC PAC (Ballotpedia)</a> · <a href="https://ballotpedia.org/Endorsements_by_Justice_Democrats_PAC">Justice Democrats (Ballotpedia)</a> · <a href="https://rollcall.com/2026/11/04/history-makers-congress-house-senate-governor/">Roll Call, history-makers</a> · <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/">CBS News results</a></span></p>
 </section>
 
 <section class="method updates" id="updates">
@@ -243,12 +278,14 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
   const stKey=s=>/^Called/.test(s)?'called':/leads/.test(s)?'leads':/trails/.test(s)?'trails':/Runoff/.test(s)?'runoff':'other';
   const legKind=r=>{const l=r.leg||''; if(!l) return 'none'; const house=/U\.S\. House/.test(l); const state=/(House|Senate|Assembly|Delegates|Council|Legislature)/.test(l.replace(/U\.S\. House[^;]*/g,'')); return house&&state?'both':house?'house':'state';};
   data.forEach(r=>{r.legk=legKind(r); r.stk=stKey(r.st); r.state=r.d.split('-')[0];});
+  const pviNum=p=>!p?null:p==='EVEN'?0:(p[0]==='R'?1:-1)*parseInt(p.slice(2),10);
+  data.forEach(r=>{r.pv=pviNum(r.pvi);});
 
   // caucus filter options
   const cset=new Set(); data.forEach(r=>{(r.cau||[]).forEach(c=>cset.add(c.c)); (r.ident||[]).forEach(i=>cset.add(i.replace(/ \(.*\)$/,'')));});
   const fc=document.getElementById('f-cau'); [...cset].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;fc.appendChild(o);});
 
-  const els={party:document.getElementById('f-party'),status:document.getElementById('f-status'),leg:document.getElementById('f-leg'),cau:fc,q:document.getElementById('f-q')};
+  const els={party:document.getElementById('f-party'),status:document.getElementById('f-status'),leg:document.getElementById('f-leg'),pvi:document.getElementById('f-pvi'),cau:fc,q:document.getElementById('f-q')};
   let sortK='d',sortDir=1;
   const stateOrder=d=>{const [s,n]=d.split('-');return s+'-'+(n==='AL'?'00':String(n).padStart(2,'0'));};
 
@@ -265,6 +302,8 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
       if(lv==='none'&&r.legk!=='none') return false;
       if(lv==='lead1'&&r.lt!==1) return false;
       if(lv==='lead'&&!r.lt) return false;
+      const pf=els.pvi.value;
+      if(pf){const v=r.pv; if(v===null) return false; if(pf==='dem'&&v>0) return false; if(pf==='r14'&&!(v>=1&&v<=4)) return false; if(pf==='r59'&&!(v>=5&&v<=9)) return false; if(pf==='r10'&&v<10) return false; if(pf==='rany'&&v<1) return false;}
       if(els.cau.value){const v=els.cau.value; const hit=(r.cau||[]).some(c=>c.c===v)||(r.ident||[]).some(i=>i.replace(/ \(.*\)$/,'')===v); if(!hit) return false;}
       if(q){const hay=[r.d,r.n,r.state,r.seat,r.pred,r.leg,r.lead||'',r.comm,r.other,r.note,(r.cau||[]).map(c=>c.c+' '+c.why).join(' '),(r.ident||[]).join(' ')].join(' ').toLowerCase(); if(!hay.includes(q)) return false;}
       return true;
@@ -284,8 +323,9 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
     return '<span class="leg-yes">Yes</span> — '+esc(r.leg)+L;
   }
   function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+  const wasLabel=w=>w==='I'?'inferred from background':'predicted '+w;
   function cauCell(r){
-    const a=(r.cau||[]).map(c=>'<span class="cau-item">'+esc(c.c)+'<span class="conf '+c.lvl+'">'+c.lvl+'</span></span>').join('');
+    const a=(r.cau||[]).slice().sort((x,y)=>(x.lvl==='C'?0:1)-(y.lvl==='C'?0:1)).map(c=>'<span class="cau-item">'+esc(c.c)+'<span class="conf '+c.lvl+'" title="'+(c.lvl==='C'?'Confirmed'+(c.was?' (was '+wasLabel(c.was)+')':''):'Predicted')+'">'+c.lvl+'</span></span>').join('');
     const b=(r.ident||[]).map(i=>'<span class="cau-item" style="color:var(--muted)">'+esc(i)+'</span>').join('');
     return a+(a&&b?'<br>':'')+b||'<span class="leg-no">Unclear</span>';
   }
@@ -300,7 +340,7 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
       (r.lt?'<div><h4>Leadership</h4><p>'+esc(r.lead)+'</p></div>':'')+
       '<div><h4>Committee assignments</h4><p>'+(r.comm?esc(r.comm):(r.leg?'Not captured':'—'))+'</p></div>'+
       '<div><h4>Other offices / career</h4><p>'+esc(r.other||'—')+'</p></div>'+
-      '<div><h4>Caucus basis</h4>'+((r.cau||[]).length?'<ul>'+(r.cau||[]).map(c=>'<li>'+esc(c.c)+' <span class="conf '+c.lvl+'">'+c.lvl+'</span> <span class="why">'+esc(c.why)+'</span></li>').join('')+'</ul>':'<p>No ideological-caucus signal found.</p>')+
+      '<div><h4>Caucus basis</h4>'+((r.cau||[]).length?'<ul>'+(r.cau||[]).map(c=>'<li>'+esc(c.c)+' <span class="conf '+c.lvl+'">'+c.lvl+'</span>'+(c.lvl==='C'&&c.was?' <span class="why">(was '+esc(wasLabel(c.was))+')</span>':'')+' <span class="why">'+esc(c.why)+'</span></li>').join('')+'</ul>':'<p>No ideological-caucus signal found.</p>')+
       ((r.ident||[]).length?'<p class="why">Identity/affinity: '+esc(r.ident.join('; '))+'</p>':'')+'</div>'+
       '<div><h4>Notes</h4><p>'+esc(r.note||'—')+'</p><p class="srcs" style="margin-top:6px">'+
         (race?'Race: <a href="'+race+'" target="_blank" rel="noopener">Ballotpedia</a>'+(r.res?' · <a href="'+esc(r.res.url)+'" target="_blank" rel="noopener">Official count ('+esc(r.res.label)+')</a>':'')+'<br>':'')+
@@ -318,7 +358,7 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
     rows.forEach(r=>{
       const id=aid(r);
       const tr=document.createElement('tr'); tr.className='row'+(opened.has(r.d+r.n)?' open':''); tr.tabIndex=0; tr.id=id;
-      tr.innerHTML='<td class="dist">'+esc(r.d)+'</td><td class="name">'+esc(r.n)+'<a class="anchor" href="#'+id+'" title="Link to this member">#</a>'+(/returning/i.test(r.seat)?'<span class="ret">returning former member</span>':'')+(/delegate/i.test(r.st)?'<span class="ret">nonvoting delegate</span>':'')+'</td>'+
+      tr.innerHTML='<td class="dist">'+esc(r.d)+(r.pvi?'<span class="pvi '+(r.pv>0?'R':r.pv<0?'D':'')+'" title="Cook PVI">'+esc(r.pvi)+'</span>':'')+'</td><td class="name">'+esc(r.n)+'<a class="anchor" href="#'+id+'" title="Link to this member">#</a>'+(/returning/i.test(r.seat)?'<span class="ret">returning former member</span>':'')+(/delegate/i.test(r.st)?'<span class="ret">nonvoting delegate</span>':'')+'</td>'+
         '<td><span class="pill '+r.p+'">'+r.p+'</span></td><td><span class="pill '+stClass(r.st)+'">'+esc(r.st)+'</span></td><td>'+esc(r.seat)+'</td><td class="leg">'+legCell(r)+'</td><td class="cau">'+cauCell(r)+'</td>';
       const dt=document.createElement('tr'); dt.className='detail'; dt.hidden=!opened.has(r.d+r.n); dt.innerHTML='<td colspan="7">'+detail(r)+'</td>';
       const toggle=()=>{const k=r.d+r.n; if(opened.has(k)){opened.delete(k);dt.hidden=true;tr.classList.remove('open');if(location.hash==='#'+id)setHash('');}else{opened.add(k);dt.hidden=false;tr.classList.add('open');setHash(id);}};
@@ -342,14 +382,15 @@ tr.detail td{background:color-mix(in srgb,var(--panel) 70%,var(--bg));padding:12
     const leg=live.filter(r=>r.legk!=='none').length, st=live.filter(r=>r.legk==='state'||r.legk==='both').length;
     const unc=rows.filter(r=>r.stk==='leads'||r.stk==='trails').length, run=rows.filter(r=>r.stk==='runoff').length;
     const l1=live.filter(r=>r.lt===1).length, lany=live.filter(r=>r.lt).length;
-    const t=[['Called or leading',live.length,D+' D · '+R+' R'],['With legislative service',leg,st+' from state/territorial legislatures'],['Held leadership roles',lany,l1+' chamber/caucus leaders'],['Uncalled races in view',unc,'leaders and trailers'],['Runoff seats',run,'Louisiana, Dec 12'],['Rows shown',rows.length,'of '+data.length]];
+    const liveD=live.filter(r=>r.p==='D'&&r.pv!==null); const dR=liveD.filter(r=>r.pv>0).length, dR5=liveD.filter(r=>r.pv>=5).length;
+    const t=[['Called or leading',live.length,D+' D · '+R+' R'],['With legislative service',leg,st+' from state/territorial legislatures'],['Held leadership roles',lany,l1+' chamber/caucus leaders'],['Uncalled races in view',unc,'leaders and trailers'],['Runoff seats',run,'Louisiana, Dec 12'],['Democrats in R-leaning seats',dR,dR5+' in R+5 or redder'],['Rows shown',rows.length,'of '+data.length]];
     document.getElementById('tiles').innerHTML=t.map(x=>'<div class="tile"><div class="k">'+x[0]+'</div><div class="v">'+x[1]+'<small>'+x[2]+'</small></div></div>').join('');
   }
   Object.values(els).forEach(e=>e.addEventListener('input',render));
   document.getElementById('f-reset').addEventListener('click',()=>{Object.values(els).forEach(e=>e.value='');render();});
   document.querySelectorAll('th[data-k]').forEach(th=>th.addEventListener('click',()=>{const k=th.dataset.k; if(sortK===k) sortDir*=-1; else {sortK=k;sortDir=1;} render();}));
   try{const s=localStorage.getItem('fresh-filters'); if(s){const o=JSON.parse(s); Object.keys(o).forEach(k=>{if(els[k]) els[k].value=o[k];});}}catch(e){}
-  Object.values(els).forEach(e=>e.addEventListener('input',()=>{try{localStorage.setItem('fresh-filters',JSON.stringify({party:els.party.value,status:els.status.value,leg:els.leg.value,cau:els.cau.value,q:els.q.value}));}catch(err){}}));
+  Object.values(els).forEach(e=>e.addEventListener('input',()=>{try{localStorage.setItem('fresh-filters',JSON.stringify({party:els.party.value,status:els.status.value,leg:els.leg.value,pvi:els.pvi.value,cau:els.cau.value,q:els.q.value}));}catch(err){}}));
   render();
   // Deep links: #tx-18-menefee opens that member, clearing any filter that hides the row.
   function goToHash(){
